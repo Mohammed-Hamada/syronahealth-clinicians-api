@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && cross-env NODE_ENV=production node dist/",
+    "start": "npm run build && cross-env NODE_ENV=production node ./dist",
     "dev": "cross-env NODE_ENV=development ts-node-dev ./src",
-    "build": "npm run build-ts",
-    "build-ts": "tsc",
+    "build": "npm run tsc",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix"
