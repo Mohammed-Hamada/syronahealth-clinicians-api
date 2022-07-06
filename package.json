@@ -13,8 +13,7 @@
     "build-ts": "tsc",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
-    "lint:fix": "npm run lint -- --fix",
-    "heroku-postbuild": "cd client && npm i && npm run build"
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -63,5 +62,8 @@
     "ts-jest": "^28.0.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "18.2.0"
   }
 }
