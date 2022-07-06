@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18.2.0"
+  },
   "scripts": {
     "start": "npm run build && cross-env NODE_ENV=production node dist/",
     "dev": "cross-env NODE_ENV=development ts-node-dev ./src",
