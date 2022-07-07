@@ -1,3 +1,3 @@
-import StatusCode from './status-code.enum';
+import ErrorsMessages from './ErrorsMessages';
 
-export { StatusCode };
+export default ErrorsMessages;

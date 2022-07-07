@@ -1,16 +1,15 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
-import express, { Express } from 'express';
+import express, { Express, Router } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { notFoundError, serverError } from './middlewares';
-import router from './routes';
+
+dotenv.config({ path: '.env' });
 
 const app: Express = express();
-
-app.set('port', process.env.PORT || 4000);
+const router = Router();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -19,8 +18,8 @@ app.use(cors());
 app.use(compression());
 app.use(
   morgan('tiny', {
-    skip: () => process.env.NODE_ENV === 'production' || false,
-  })
+    skip: () => process.env.NODE_ENV === 'production',
+  }),
 );
 
 app.use('/api/v1', router);

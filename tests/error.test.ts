@@ -1,15 +1,16 @@
 import request, { Response } from 'supertest';
-import app from '../app';
-import { StatusCode } from '../enums';
+import { StatusCodes } from 'http-status-codes';
+import ErrorsMessages from '../src/enums';
+import app from '../src/app';
 
 describe('Errors Handlers', () => {
   console.log(process.env.DATABASE_URL);
   it('Not found error', async () => {
     const response: Response = await request(app)
-      .get("/api/v1/thisPageDoesn'tFound")
-      .expect(StatusCode.ClientErrorNotFound);
+      .get('/api/v1/not-found')
+      .expect(StatusCodes.NOT_FOUND);
     expect(response.body).toStrictEqual({
-      message: 'Sorry, this page not found',
+      message: ErrorsMessages.NOT_FOUND,
     });
   });
 });

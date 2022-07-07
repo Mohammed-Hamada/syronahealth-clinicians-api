@@ -1,3 +1,3 @@
-import { NotFoundError, AnotherErrors } from './error.interface';
+import { ClientErrors, NotFoundError, ClientErrorsStatus } from './Errors';
 
-export { NotFoundError, AnotherErrors };
+export { ClientErrors, NotFoundError, ClientErrorsStatus };
