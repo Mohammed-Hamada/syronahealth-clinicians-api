@@ -6,7 +6,6 @@
   "scripts": {
     "start": "npm run tsc && cross-env NODE_ENV=production node ./dist/bin/run",
     "dev": "cross-env NODE_ENV=development ts-node-dev ./bin/run",
-    "build": "npm run tsc",
     "tsc": "tsc",
     "postinstall": "npm run tsc",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles",
