@@ -13,11 +13,11 @@ type ClientErrorsStatus =
   | 409
   | 410
   | 429;
-
 interface ClientErrors {
   message: string;
   status: ClientErrorsStatus;
 }
+
 interface NotFoundError {
   status: StatusCodes.NOT_FOUND;
   message: ErrorsMessages.NOT_FOUND;
