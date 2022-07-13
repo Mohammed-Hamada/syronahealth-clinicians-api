@@ -4,7 +4,6 @@ import ErrorsMessages from '../src/enums';
 import app from '../src/app';
 
 describe('Errors Handlers', () => {
-  console.log(process.env.DATABASE_URL);
   it('Not found error', async () => {
     const response: Response = await request(app)
       .get('/api/v1/not-found')
