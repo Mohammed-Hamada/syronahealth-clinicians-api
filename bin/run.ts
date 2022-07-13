@@ -3,11 +3,23 @@ import debugFactory from 'debug';
 import http from 'http';
 import app from '../src/app';
 import { PORT } from '../src/config';
+import sequelize from '../src/database';
 
 const debug = debugFactory('express-generator:server');
 
+// Test Database Connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch((err) => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 const server = http.createServer(app);
 
+// Test if server running successfully
 function normalizePort(val: string | undefined): number | string | boolean {
   let port: number;
   if (typeof val === 'string') {
