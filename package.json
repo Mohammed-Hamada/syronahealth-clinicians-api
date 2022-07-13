@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./dist/bin/run",
+    "start": "NODE_ENV=production node ./dist/bin/run",
     "dev": "cross-env NODE_ENV=development ts-node-dev ./bin/run",
     "tsc": "tsc",
     "build": "tsc",
