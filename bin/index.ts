@@ -2,24 +2,13 @@
 import debugFactory from 'debug';
 import http from 'http';
 import app from '../src/app';
-import { PORT } from '../src/config';
+import { NODE_ENV, PORT } from '../src/config';
 import sequelize from '../src/database';
 
-const debug = debugFactory('express-generator:server');
-
-// Test Database Connection
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
+const debug = debugFactory('syronahealth-api');
 
 const server = http.createServer(app);
 
-// Test if server running successfully
 function normalizePort(val: string | undefined): number | string | boolean {
   let port: number;
   if (typeof val === 'string') {
@@ -35,7 +24,6 @@ function normalizePort(val: string | undefined): number | string | boolean {
 }
 
 const port = normalizePort(PORT);
-app.set('port', port);
 
 function onError(error: NodeJS.ErrnoException): void {
   if (error?.syscall !== 'listen') {
@@ -64,13 +52,25 @@ function onListening(): void {
   debug(`Listening on ${bind}`);
 }
 
-server.listen(port, () => {
-  console.log(
-    'App is running at http://localhost:%d in %s mode',
-    PORT,
-    app.get('env'),
-    '\nPress CTRL-C to stop\n',
-  );
-});
+(async (): Promise<void> => {
+  try {
+    // Test Database Connection
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+
+    // Run the server
+    server.listen(port, () => {
+      console.log(
+        'App is running at http://localhost:%d in %s mode',
+        PORT,
+        NODE_ENV,
+        '\nPress CTRL-C to stop\n',
+      );
+    });
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+})();
+
 server.on('error', onError);
 server.on('listening', onListening);
