@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import { notFoundError, serverError } from './middlewares';
+import { notFoundHandler, errorsHandler } from './middlewares';
 
 dotenv.config({ path: '.env' });
 
@@ -24,7 +24,7 @@ app.use(
 
 app.use('/api/v1', router);
 
-app.use(notFoundError);
-app.use(serverError);
+app.use(notFoundHandler);
+app.use(errorsHandler);
 
 export default app;

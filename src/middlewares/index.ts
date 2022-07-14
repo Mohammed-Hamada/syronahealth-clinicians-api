@@ -1,3 +1,3 @@
-import { notFoundError, serverError } from './error';
+import { notFoundHandler, errorsHandler } from './error';
 
-export { notFoundError, serverError };
+export { notFoundHandler, errorsHandler };

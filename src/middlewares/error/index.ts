@@ -1,4 +1,4 @@
-import notFoundError from './notFound';
-import serverError from './server';
+import notFoundHandler from './notFoundHandler';
+import errorsHandler from './errorsHandler';
 
-export { notFoundError, serverError };
+export { notFoundHandler, errorsHandler };
