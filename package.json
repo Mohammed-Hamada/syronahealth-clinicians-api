@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node ./dist/bin/run",
-    "dev": "cross-env NODE_ENV=development ts-node-dev ./bin/run",
+    "start": "NODE_ENV=production node ./dist/bin",
+    "dev": "cross-env NODE_ENV=development ts-node-dev ./bin",
     "build": "tsc",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles",
     "lint": "eslint --ext .ts ./",
