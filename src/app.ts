@@ -1,12 +1,9 @@
-import dotenv from 'dotenv';
 import express, { Express, Router } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { notFoundHandler, errorsHandler } from './middlewares';
-
-dotenv.config({ path: '.env' });
 
 const app: Express = express();
 const router = Router();

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 import debugFactory from 'debug';
 import http from 'http';
+import dotenv from 'dotenv';
 import app from '../src/app';
-import { NODE_ENV, PORT } from '../src/config';
 import sequelize from '../src/database';
+import { serverVars } from '../src/config';
+
+dotenv.config();
 
 const debug = debugFactory('syronahealth-api');
 
@@ -23,7 +26,7 @@ function normalizePort(val: string | undefined): number | string | boolean {
   return false;
 }
 
-const port = normalizePort(PORT);
+const port = normalizePort(serverVars.PORT);
 
 function onError(error: NodeJS.ErrnoException): void {
   if (error?.syscall !== 'listen') {
@@ -62,8 +65,8 @@ function onListening(): void {
     server.listen(port, () => {
       console.log(
         'App is running at http://localhost:%d in %s mode',
-        PORT,
-        NODE_ENV,
+        serverVars.PORT,
+        serverVars.NODE_ENV,
         '\nPress CTRL-C to stop\n',
       );
     });
