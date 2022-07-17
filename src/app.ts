@@ -1,12 +1,9 @@
-import dotenv from 'dotenv';
 import express, { Express, Router } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import { notFoundError, serverError } from './middlewares';
-
-dotenv.config({ path: '.env' });
+import { notFoundHandler, errorsHandler } from './middlewares';
 
 const app: Express = express();
 const router = Router();
@@ -24,7 +21,7 @@ app.use(
 
 app.use('/api/v1', router);
 
-app.use(notFoundError);
-app.use(serverError);
+app.use(notFoundHandler);
+app.use(errorsHandler);
 
 export default app;

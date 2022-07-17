@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import ErrorsMessages from '../../enums';
 import { NotFoundError } from '../../interfaces';
 
-const notFoundError = (_request: Request, response: Response):void => {
+const notFoundHandler = (_request: Request, response: Response):void => {
   const { status, message }: NotFoundError = {
     message: ErrorsMessages.NOT_FOUND,
     status: StatusCodes.NOT_FOUND,
@@ -11,4 +11,4 @@ const notFoundError = (_request: Request, response: Response):void => {
   response.status(status).json({ message });
 };
 
-export default notFoundError;
+export default notFoundHandler;

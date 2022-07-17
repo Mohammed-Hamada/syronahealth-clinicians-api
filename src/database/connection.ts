@@ -1,12 +1,8 @@
 import { Sequelize } from 'sequelize';
-import {
-  DB_HOST, DB_PORT, DB_USER, DB_PSWD, DB_NAME,
-} from '../config';
+import { databaseVars } from '../config';
 
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PSWD, {
-  host: DB_HOST,
+const sequelize = new Sequelize(databaseVars.DATABASE_URL, {
   dialect: 'postgres',
-  port: +DB_PORT,
   dialectOptions: {
     ssl: false,
   },
