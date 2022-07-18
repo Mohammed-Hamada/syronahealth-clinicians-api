@@ -12,15 +12,19 @@ const DATABASE_URL = process.env.DATABASE_URL as string;
 
 const databaseSchema = joi.object().keys({
   NODE_ENV: joi.string().valid('development', 'test', 'production').required(),
-  DATABASE_URL: joi.when('NODE_ENV', {
-    is: 'development',
-    then: joi.when('NODE_ENV', {
-      is: 'test',
+  DATABASE_URL: joi
+    .string()
+    .when('NODE_ENV', {
+      is: 'development',
       then: joi.string().required(),
-    }),
-  }),
+    })
+    .concat(
+      joi
+        .string()
+        .when('NODE_ENV', { is: 'test', then: joi.string().required() }),
+    ),
 });
-
+// Undefined problem
 const databaseVars = (): {
   NODE_ENV: string;
   DATABASE_URL: string;
