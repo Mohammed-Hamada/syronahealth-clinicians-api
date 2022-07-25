@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../connection';
 
-const User = sequelize.define('User', {
+const Users = sequelize.define('Users', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -15,43 +15,59 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  first_name: {
+  firstName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  last_name: {
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  is_active: {
+  isActive: {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
     allowNull: false,
   },
-  is_staff: {
+  isStaff: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
+  isSuperuser: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  is_superuser: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  is_deleted: {
+  isDeleted: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
-  is_business: DataTypes.BOOLEAN,
-  agree_to_terms: DataTypes.BOOLEAN,
-  agree_to_privacy: DataTypes.BOOLEAN,
-  allow_data_sharing: DataTypes.BOOLEAN,
-  db: DataTypes.STRING,
-  dop: DataTypes.DATEONLY,
-  coins: DataTypes.INTEGER,
+  isBusiness: {
+    type: DataTypes.BOOLEAN,
+  },
+  agree_to_terms: {
+    type: DataTypes.BOOLEAN,
+  },
+  agree_to_privacy: {
+    type: DataTypes.BOOLEAN,
+  },
+  allow_data_sharing: {
+    type: DataTypes.BOOLEAN,
+  },
+  profilePicture: {
+    type: DataTypes.STRING,
+  },
+  dob: {
+    type: DataTypes.DATEONLY,
+  },
+  coins: {
+    type: DataTypes.INTEGER,
+  },
 });
 
-export default User;
+export default Users;
+// Paranoid sequlize
 
 // customer - string (used for 3rd party integration)
 // pb_id - string (used for 3rd party integration)
 // access_code - string (used for 3rd party integration)
-// NHS_number - string (used for 3rd party integration)
+// NHS_n umber - string (used for 3rd party integration)
