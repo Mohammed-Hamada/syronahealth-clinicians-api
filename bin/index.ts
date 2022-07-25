@@ -4,7 +4,7 @@ import http from 'http';
 import dotenv from 'dotenv';
 import app from '../src/app';
 import sequelize from '../src/database';
-import { serverVars } from '../src/config';
+import { databaseVars, serverVars } from '../src/config';
 
 dotenv.config();
 
@@ -61,6 +61,13 @@ function onListening(): void {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
+    // Build Database Tables for development environment
+    if (databaseVars.NODE_ENV === 'development') {
+      await sequelize.sync({
+        force: true,
+      });
+    }
+
     // Run the server
     server.listen(port, () => {
       console.log(
@@ -71,7 +78,10 @@ function onListening(): void {
       );
     });
   } catch (error) {
-    console.error('Unable to connect to the database:', error);
+    console.error(
+      'There is an error occurs when connect with and build database:',
+      error,
+    );
   }
 })();
 
