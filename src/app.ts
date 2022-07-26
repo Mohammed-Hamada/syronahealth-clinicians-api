@@ -1,12 +1,13 @@
-import express, { Express, Router } from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { notFoundHandler, errorsHandler } from './middlewares';
+// import employerDashboardRouter from './routes';
+import employerDashboardRouter from './routes';
 
 const app: Express = express();
-const router = Router();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -19,7 +20,7 @@ app.use(
   }),
 );
 
-app.use('/api/v1', router);
+app.use('/api/v1', employerDashboardRouter);
 
 app.use(notFoundHandler);
 app.use(errorsHandler);
