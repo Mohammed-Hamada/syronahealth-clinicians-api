@@ -8,7 +8,7 @@ const User = sequelize.define('User', {
     primaryKey: true,
   },
   username: {
-    type: DataTypes.STRING,
+    type: DataTypes.CHAR(150),
     allowNull: false,
   },
   email: {
@@ -16,12 +16,18 @@ const User = sequelize.define('User', {
     allowNull: false,
   },
   first_name: {
-    type: DataTypes.STRING,
+    type: DataTypes.CHAR(60),
     allowNull: false,
   },
   last_name: {
-    type: DataTypes.STRING,
+    type: DataTypes.CHAR(60),
     allowNull: false,
+  },
+  gender: {
+    type: DataTypes.CHAR(60),
+  },
+  coins: {
+    type: DataTypes.INTEGER,
   },
   is_active: {
     type: DataTypes.BOOLEAN,
@@ -40,13 +46,9 @@ const User = sequelize.define('User', {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
-  is_business: DataTypes.BOOLEAN,
-  agree_to_terms: DataTypes.BOOLEAN,
-  agree_to_privacy: DataTypes.BOOLEAN,
-  allow_data_sharing: DataTypes.BOOLEAN,
-  db: DataTypes.STRING,
-  dop: DataTypes.DATEONLY,
-  coins: DataTypes.INTEGER,
+  is_business: {
+    type: DataTypes.BOOLEAN,
+  },
 });
 
 export default User;
