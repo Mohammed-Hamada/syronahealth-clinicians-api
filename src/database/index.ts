@@ -1,3 +1,4 @@
+import buildDatabase from './build';
 import sequelize from './connection';
 
-export default sequelize;
+export { sequelize, buildDatabase };

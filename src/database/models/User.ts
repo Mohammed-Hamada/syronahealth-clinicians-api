@@ -6,6 +6,7 @@ const User = sequelize.define('User', {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
+    allowNull: false,
   },
   username: {
     type: DataTypes.CHAR(150),
@@ -52,8 +53,3 @@ const User = sequelize.define('User', {
 });
 
 export default User;
-
-// customer - string (used for 3rd party integration)
-// pb_id - string (used for 3rd party integration)
-// access_code - string (used for 3rd party integration)
-// NHS_number - string (used for 3rd party integration)
