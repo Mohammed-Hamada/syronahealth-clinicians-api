@@ -1,15 +1,11 @@
 #!/usr/bin/env node
 import debugFactory from 'debug';
 import http from 'http';
-import dotenv from 'dotenv';
 import app from '../src/app';
-import sequelize from '../src/database';
-import { databaseVars, serverVars } from '../src/config';
-
-dotenv.config();
+import { sequelize } from '../src/database/models';
+import { serverVars } from '../src/config';
 
 const debug = debugFactory('syronahealth-api');
-
 const server = http.createServer(app);
 
 function normalizePort(val: string | undefined): number | string | boolean {
@@ -61,13 +57,6 @@ function onListening(): void {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    // Build Database Tables for development environment
-    if (databaseVars.NODE_ENV === 'development') {
-      await sequelize.sync({
-        force: true,
-      });
-    }
-
     // Run the server
     server.listen(port, () => {
       console.log(
@@ -79,8 +68,8 @@ function onListening(): void {
     });
   } catch (error) {
     console.error(
-      'There is an error occurs when connect with and build database:',
-      error,
+      `Unable to connect to the database: 
+      ${error}`,
     );
   }
 })();
