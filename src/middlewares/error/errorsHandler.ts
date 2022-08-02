@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import ErrorsMessages from '../../enums';
+import { ErrorsMessages } from '../../enums';
 import { ClientErrors } from '../../interfaces';
 
 const errorsHandler = (
@@ -12,6 +12,7 @@ const errorsHandler = (
   if (status) {
     return response.status(status).json({ message });
   }
+  console.log(message);
   return response
     .status(StatusCodes.INTERNAL_SERVER_ERROR)
     .json({ message: ErrorsMessages.INTERNAL_SERVER_ERROR });

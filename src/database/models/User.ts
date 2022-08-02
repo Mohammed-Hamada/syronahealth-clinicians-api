@@ -16,11 +16,11 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  first_name: {
+  firstName: {
     type: DataTypes.CHAR(60),
     allowNull: false,
   },
-  last_name: {
+  lastName: {
     type: DataTypes.CHAR(60),
     allowNull: false,
   },
@@ -30,24 +30,25 @@ const User = sequelize.define('User', {
   coins: {
     type: DataTypes.INTEGER,
   },
-  is_active: {
+  isActive: {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
     allowNull: false,
   },
-  is_staff: {
+  isStaff: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
+  isSuperuser: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  is_superuser: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  is_deleted: {
+  isDeleted: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
-  is_business: {
+  isBusiness: {
     type: DataTypes.BOOLEAN,
   },
 });

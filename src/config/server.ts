@@ -12,13 +12,18 @@ const PORT = process.env.PORT as string;
 
 const serverSchema = joi.object().keys({
   NODE_ENV: joi.string().valid('development', 'test', 'production').required(),
-  PORT: joi.when('NODE_ENV', {
-    is: 'development',
-    then: joi.when('NODE_ENV', {
-      is: 'test',
+
+  PORT: joi
+    .string()
+    .when('NODE_ENV', {
+      is: 'development',
       then: joi.string().required(),
-    }),
-  }),
+    })
+    .concat(
+      joi
+        .string()
+        .when('NODE_ENV', { is: 'test', then: joi.string().required() }),
+    ),
 });
 
 const serverVars = (): {
