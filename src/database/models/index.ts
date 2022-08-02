@@ -6,18 +6,15 @@ import UserState from './UserState';
 
 (async (): Promise<void> => {
   try {
-    User.hasMany(UserState, { foreignKey: 'user' });
+    User.hasMany(UserState);
+    UserState.belongsTo(User);
 
-    User.belongsToMany(Company, { through: Employee, foreignKey: 'user' });
-    Company.belongsToMany(User, { through: Employee, foreignKey: 'corporate' });
-
+    User.belongsToMany(Company, { through: Employee, foreignKey: 'user_id' });
+    Company.belongsToMany(User, { through: Employee, foreignKey: 'company_id' });
     User.hasMany(Employee);
     Company.hasMany(Employee);
-
     Employee.belongsTo(User);
     Employee.belongsTo(Company);
-
-    console.log('Database built successfully!');
   } catch (error) {
     console.log(error);
   }

@@ -13,7 +13,8 @@
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles",
     "lint": "eslint --ext .ts ./",
     "lint:fix": "npm run lint --fix",
-    "build:db": "NODE_ENV=development ts-node src/database/build.ts"
+    "build:db": "NODE_ENV=development ts-node src/database/build.ts",
+    "build:db:test": "NODE_ENV=test ts-node src/database/buildFakeData.ts"
   },
   "repository": {
     "type": "git",

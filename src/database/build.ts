@@ -4,8 +4,9 @@ import { sequelize } from './models';
 const buildDatabase = async (): Promise<void> => {
   try {
     await sequelize.sync({ force: true });
-  } catch {
-    console.log('Database build failed!');
+    console.log('Database has been synced successfully.');
+  } catch (error) {
+    console.log(error);
   }
 };
 
