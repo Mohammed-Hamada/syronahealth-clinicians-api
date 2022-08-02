@@ -4,8 +4,6 @@ import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { notFoundHandler, errorsHandler } from './middlewares';
-// import employerDashboardRouter from './routes';
-import employerDashboardRouter from './routes';
 
 const app: Express = express();
 
@@ -19,8 +17,6 @@ app.use(
     skip: () => process.env.NODE_ENV === 'production',
   }),
 );
-
-app.use('/api/v1', employerDashboardRouter);
 
 app.use(notFoundHandler);
 app.use(errorsHandler);
