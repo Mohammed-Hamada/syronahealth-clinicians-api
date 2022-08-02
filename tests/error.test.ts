@@ -1,6 +1,6 @@
 import request, { Response } from 'supertest';
 import { StatusCodes } from 'http-status-codes';
-import ErrorsMessages from '../src/enums';
+import { ErrorsMessages } from '../src/enums';
 import app from '../src/app';
 
 describe('Errors Handlers', () => {

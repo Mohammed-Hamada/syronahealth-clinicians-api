@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Plambee",
+    "uniqueCode": "a5b1e1",
+    "email": "akeeney0@g.co",
+    "allowedEmployees": 100,
+    "registeredEmployees": 11,
+    "coins": 6359
+  },
+  {
+    "id": 2,
+    "name": "Wordpedia",
+    "uniqueCode": "47d45f",
+    "email": "jgong1@constantcontact.com",
+    "allowedEmployees": 200,
+    "registeredEmployees": 8,
+    "coins": 9245
+  },
+  {
+    "id": 3,
+    "name": "Jaxworks",
+    "uniqueCode": "afaed4",
+    "email": "cjenkin2@abc.net.au",
+    "allowedEmployees": 797,
+    "registeredEmployees": 460,
+    "coins": 7487
+  },
+  {
+    "id": 4,
+    "name": "Gabtune",
+    "uniqueCode": "39681a",
+    "email": "hrother3@amazon.com",
+    "allowedEmployees": 700,
+    "registeredEmployees": 492,
+    "coins": 7945
+  },
+  {
+    "id": 5,
+    "name": "LiveZ",
+    "uniqueCode": "143a48",
+    "email": "pshaefer4@over-blog.com",
+    "allowedEmployees": 988,
+    "registeredEmployees": 108,
+    "coins": 9429
+  },
+  {
+    "id": 6,
+    "name": "Quimba",
+    "uniqueCode": "94166f",
+    "email": "srheam5@prlog.org",
+    "allowedEmployees": 946,
+    "registeredEmployees": 189,
+    "coins": 8452
+  },
+  {
+    "id": 7,
+    "name": "Dynava",
+    "uniqueCode": "a13968",
+    "email": "jdewerson6@skype.com",
+    "allowedEmployees": 782,
+    "registeredEmployees": 416,
+    "coins": 9880
+  },
+  {
+    "id": 8,
+    "name": "Fivespan",
+    "uniqueCode": "1e248e",
+    "email": "tbulward7@google.de",
+    "allowedEmployees": 863,
+    "registeredEmployees": 406,
+    "coins": 7558
+  },
+  {
+    "id": 9,
+    "name": "Innotype",
+    "uniqueCode": "9626c8",
+    "email": "rlongridge8@behance.net",
+    "allowedEmployees": 876,
+    "registeredEmployees": 471,
+    "coins": 3556
+  },
+  {
+    "id": 10,
+    "name": "Blogtags",
+    "uniqueCode": "48ff29",
+    "email": "bmckillop9@virginia.edu",
+    "allowedEmployees": 815,
+    "registeredEmployees": 636,
+    "coins": 2365
+  }
+]

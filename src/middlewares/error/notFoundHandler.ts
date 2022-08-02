@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import ErrorsMessages from '../../enums';
+import { ErrorsMessages } from '../../enums';
 import { NotFoundError } from '../../interfaces';
 
 const notFoundHandler = (_request: Request, response: Response):void => {

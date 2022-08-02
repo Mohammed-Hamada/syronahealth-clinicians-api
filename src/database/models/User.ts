@@ -6,52 +6,51 @@ const User = sequelize.define('User', {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
+    allowNull: false,
   },
   username: {
-    type: DataTypes.STRING,
+    type: DataTypes.CHAR(150),
     allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  first_name: {
-    type: DataTypes.STRING,
+  firstName: {
+    type: DataTypes.CHAR(60),
     allowNull: false,
   },
-  last_name: {
-    type: DataTypes.STRING,
+  lastName: {
+    type: DataTypes.CHAR(60),
     allowNull: false,
   },
-  is_active: {
+  gender: {
+    type: DataTypes.CHAR(60),
+  },
+  coins: {
+    type: DataTypes.INTEGER,
+  },
+  isActive: {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
     allowNull: false,
   },
-  is_staff: {
+  isStaff: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
+  isSuperuser: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  is_superuser: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  is_deleted: {
+  isDeleted: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
-  is_business: DataTypes.BOOLEAN,
-  agree_to_terms: DataTypes.BOOLEAN,
-  agree_to_privacy: DataTypes.BOOLEAN,
-  allow_data_sharing: DataTypes.BOOLEAN,
-  db: DataTypes.STRING,
-  dop: DataTypes.DATEONLY,
-  coins: DataTypes.INTEGER,
+  isBusiness: {
+    type: DataTypes.BOOLEAN,
+  },
 });
 
 export default User;
-
-// customer - string (used for 3rd party integration)
-// pb_id - string (used for 3rd party integration)
-// access_code - string (used for 3rd party integration)
-// NHS_number - string (used for 3rd party integration)
