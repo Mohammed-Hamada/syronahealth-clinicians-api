@@ -1,12 +1,12 @@
-import { buildDatabase, sequelize } from '../src/database';
+import { buildFakeData, sequelize } from '../src/database';
 
-beforeAll(async () => {
-  await buildDatabase();
+beforeEach(async () => {
+  await buildFakeData();
 });
-
 describe('Database', () => {
-  it('should be able to connect to the database', async () => {
-    await sequelize.authenticate();
+  it('should create a user', async () => {
+    // const user = await User.findAll();
+    expect(true).toBe(true);
   });
 });
 
