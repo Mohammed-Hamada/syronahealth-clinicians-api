@@ -1,0 +1,42 @@
+[
+  {
+    "user": 2,
+    "healthConditions": ["Leukemia"]
+  },
+  {
+    "user": 3,
+    "healthConditions": ["Infertility"]
+  },
+  {
+    "user": 5,
+    "healthConditions": ["Hair loss", "Heart Disease"]
+  },
+  {
+    "user": 7,
+    "healthConditions": ["Alzheimer's disease"]
+  },
+  {
+    "user": 9,
+    "healthConditions": ["Chronic obstructive pulmonary disease (COPD)"]
+  },
+  {
+    "user": 10,
+    "healthConditions": ["Endo"]
+  },
+  {
+    "user": 6,
+    "healthConditions": ["High blood pressure", "High cholesterol"]
+  },
+  {
+    "user": 8,
+    "healthConditions": ["Alzheimer's disease"]
+  },
+  {
+    "user": 4,
+    "healthConditions": ["Infertility", "High cholesterol"]
+  },
+  {
+    "user": 1,
+    "healthConditions": ["Stress", "Hair loss", "Depression"]
+  }
+]

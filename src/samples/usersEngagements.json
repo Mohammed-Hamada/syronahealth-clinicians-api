@@ -1,0 +1,110 @@
+[
+  {
+    "user": 1,
+    "engagements": [
+      "Read blog",
+      "Completed a module",
+      "Logged symptoms",
+      "Ordered products",
+      "Booked consultation"
+    ]
+  },
+  {
+    "user": 4,
+    "engagements": [
+      "Read blog",
+      "Completed a module",
+      "Booked consultation",
+      "Added a note"
+    ]
+  },
+  {
+    "user": 3,
+    "engagements": [
+      "Read blog",
+      "Commented on a blog",
+      "Posted",
+      "Completed a module"
+    ]
+  },
+  {
+    "user": 2,
+    "engagements": [
+      "Booked consultation",
+      "Commented on a blog",
+      "Logged symptoms",
+      "Responded to a poll"
+    ]
+  },
+  {
+    "user": 9,
+    "engagements": [
+      "Commented on a post",
+      "Commented on a post",
+      "Ordered products",
+      "Posted",
+      "Completed a module",
+      "Commented on a post"
+    ]
+  },
+  {
+    "user": 8,
+    "engagements": [
+      "Booked consultation",
+      "Logged lifestyle",
+      "Added a note",
+      "Completed a module"
+    ]
+  },
+  {
+    "user": 6,
+    "engagements": [
+      "Read blog",
+      "Commented on a blog",
+      "Logged symptoms",
+      "Booked consultation"
+    ]
+  },
+  {
+    "user": 5,
+    "engagements": [
+      "Added a note",
+      "Booked consultation",
+      "Added a note",
+      "Responded to a poll",
+      "Commented on a blog",
+      "Commented on a blog",
+      "Commented on a blog",
+      "Logged symptoms",
+      "Added a note"
+    ]
+  },
+  {
+    "user": 10,
+    "engagements": [
+      "Added a note",
+      "Booked consultation",
+      "Added a note",
+      "Responded to a poll",
+      "Commented on a blog",
+      "Commented on a blog",
+      "Commented on a blog",
+      "Logged symptoms",
+      "Added a note"
+    ]
+  },
+  {
+    "user": 7,
+    "engagements": [
+      "Ordered products",
+      "Responded to a poll",
+      "Recorded interests",
+      "Responded to a poll",
+      "Ordered products",
+      "Added a note",
+      "Completed a module",
+      "Ordered products",
+      "Added a note"
+    ]
+  }
+]
