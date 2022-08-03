@@ -3,14 +3,17 @@ import { sequelize } from './models';
 
 const buildDatabase = async (): Promise<void> => {
   try {
+    console.log('Database Building: building database...');
     await sequelize.sync({ force: true });
-    console.log('Database has been synced successfully.');
   } catch (error) {
-    console.log(error);
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
   }
 };
 
 if (databaseVars.NODE_ENV === 'development') {
   buildDatabase();
+  console.log('Database Building: database has been built successfully.');
 }
 export default buildDatabase;
