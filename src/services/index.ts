@@ -1,3 +1,4 @@
 import getAllCompanies from './getAllCompanies';
+import getCompanyById from './getCompanyById';
 
-export default getAllCompanies;
+export { getAllCompanies, getCompanyById };

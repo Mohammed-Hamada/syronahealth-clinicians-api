@@ -1,13 +1,33 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
+import { SuccessMessages } from '../enums';
 import { ResponseShape } from '../interfaces';
-import getAllCompanies from '../services';
+import { getAllCompanies, getCompanyById } from '../services';
 
 const sendAllCompanies = async (
   _request: Request,
   response: Response,
-): Promise<Response<ResponseShape>> => {
-  const companies = getAllCompanies();
-  return response.json({ message: 'Success', data: companies });
+  next: NextFunction,
+): Promise<Response<ResponseShape> | unknown> => {
+  try {
+    const companies = await getAllCompanies();
+    return response.json({ message: SuccessMessages.SUCCESS, data: companies });
+  } catch (error) {
+    return next(error);
+  }
 };
 
-export default sendAllCompanies;
+const sendCompanyById = async (
+  request: Request,
+  response: Response,
+  next: NextFunction,
+): Promise<Response<ResponseShape> | unknown> => {
+  try {
+    const { id } = request.params;
+    const company = await getCompanyById(+id);
+    return response.json({ message: SuccessMessages.SUCCESS, data: company });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export { sendAllCompanies, sendCompanyById };
