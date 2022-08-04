@@ -9,7 +9,10 @@ const sequelize = new Sequelize(databaseVars.DATABASE_URL, {
     updatedAt: 'updated',
   },
   dialectOptions: {
-    ssl: false,
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   },
   pool: {
     max: 5,
