@@ -1,3 +1,3 @@
-import sendAllCompanies from './companies';
+import { sendAllCompanies, sendCompanyById } from './companies';
 
-export default sendAllCompanies;
+export { sendAllCompanies, sendCompanyById };
