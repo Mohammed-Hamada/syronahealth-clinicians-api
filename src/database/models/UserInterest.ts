@@ -11,7 +11,7 @@ const UserInterest = sequelize.define(
       allowNull: false,
     },
     interests: {
-      type: DataTypes.ARRAY(DataTypes.CHAR(80)),
+      type: DataTypes.ARRAY(DataTypes.STRING(80)),
       defaultValue: [],
     },
   },

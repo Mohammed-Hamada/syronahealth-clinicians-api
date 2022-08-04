@@ -9,7 +9,7 @@ const User = sequelize.define('User', {
     allowNull: false,
   },
   username: {
-    type: DataTypes.CHAR(150),
+    type: DataTypes.STRING(150),
     allowNull: false,
   },
   email: {
@@ -17,15 +17,15 @@ const User = sequelize.define('User', {
     allowNull: false,
   },
   firstName: {
-    type: DataTypes.CHAR(60),
+    type: DataTypes.STRING(60),
     allowNull: false,
   },
   lastName: {
-    type: DataTypes.CHAR(60),
+    type: DataTypes.STRING(60),
     allowNull: false,
   },
   gender: {
-    type: DataTypes.CHAR(60),
+    type: DataTypes.STRING(60),
   },
   coins: {
     type: DataTypes.INTEGER,

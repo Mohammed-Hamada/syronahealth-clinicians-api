@@ -11,7 +11,7 @@ const UserEngagement = sequelize.define(
       allowNull: false,
     },
     engagements: {
-      type: DataTypes.ARRAY(DataTypes.CHAR(80)),
+      type: DataTypes.ARRAY(DataTypes.STRING(80)),
       defaultValue: [],
     },
   },

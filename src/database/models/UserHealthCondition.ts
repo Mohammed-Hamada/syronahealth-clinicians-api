@@ -9,7 +9,7 @@ const UserHealthCondition = sequelize.define('UserHealthCondition', {
     allowNull: false,
   },
   healthConditions: {
-    type: DataTypes.ARRAY(DataTypes.CHAR(80)),
+    type: DataTypes.ARRAY(DataTypes.STRING(80)),
     defaultValue: [],
   },
 });
