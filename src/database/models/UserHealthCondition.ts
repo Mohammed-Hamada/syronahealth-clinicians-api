@@ -1,18 +1,17 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../connection';
 
-const Employee = sequelize.define('Employee', {
+const UserHealthCondition = sequelize.define('UserHealthCondition', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
     allowNull: false,
   },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
+  healthConditions: {
+    type: DataTypes.ARRAY(DataTypes.STRING(80)),
+    defaultValue: [],
   },
 });
 
-export default Employee;
+export default UserHealthCondition;

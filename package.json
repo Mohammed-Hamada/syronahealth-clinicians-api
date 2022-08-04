@@ -10,11 +10,15 @@
     "start": "NODE_ENV=production node ./dist/bin",
     "dev": "cross-env NODE_ENV=development ts-node-dev ./bin",
     "build": "tsc",
-    "test": "NODE_ENV=test jest ",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit",
     "lint": "eslint --ext .ts ./",
     "lint:fix": "npm run lint --fix",
-    "build:db": "NODE_ENV=development ts-node src/database/build.ts",
-    "build:db:test": "NODE_ENV=test ts-node src/database/buildFakeData.ts"
+    "build:db": "ts-node src/database/build.ts",
+    "build:fake-data": "ts-node src/database/buildFakeData.ts",
+    "build:db:development": "NODE_ENV=development npm run build:db",
+    "build:db:test": "NODE_ENV=test npm run build:db",
+    "build:fake-data:development": "NODE_ENV=development npm run build:fake-data",
+    "build:fake-data:test": "NODE_ENV=test npm run build:fake-data"
   },
   "repository": {
     "type": "git",

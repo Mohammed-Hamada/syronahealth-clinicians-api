@@ -11,6 +11,11 @@ const sequelize = new Sequelize(databaseVars.DATABASE_URL, {
   dialectOptions: {
     ssl: false,
   },
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 5000,
+  },
   logging: false,
 });
 

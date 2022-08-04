@@ -1,22 +1,36 @@
 import { databaseVars } from '../config';
-import { companies, employees, users } from '../samples';
-import sequelize from './connection';
-import { Company, Employee, User } from './models';
+import {
+  companies,
+  employees,
+  users,
+  usersEngagements,
+  usersHealthConditions,
+  usersInterests,
+} from '../samples';
+import {
+  Company, Employee, sequelize, User, UserEngagement, UserHealthCondition, UserInterest,
+} from './models';
 
 const buildFakeData = async (): Promise<void> => {
   try {
+    console.log('Database Building: building fake data...');
     await sequelize.sync({ force: true });
-    console.log('Database has been synced successfully.');
-
     await User.bulkCreate(users);
     await Company.bulkCreate(companies);
     await Employee.bulkCreate(employees);
-    console.log('Fake data has been created successfully.');
+    await UserEngagement.bulkCreate(usersEngagements);
+    await UserInterest.bulkCreate(usersInterests);
+    await UserHealthCondition.bulkCreate(usersHealthConditions);
   } catch (error) {
-    console.log(error);
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
   }
 };
 
-if (databaseVars.NODE_ENV === 'test') {
+if (databaseVars.NODE_ENV === 'development') {
   buildFakeData();
+  console.log('Database Building: fake data has been built successfully.');
 }
+
+export default buildFakeData;

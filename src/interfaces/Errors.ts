@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import ErrorsMessages from '../enums';
+import { ErrorsMessages } from '../enums';
 
 type ClientErrorsStatus =
   | 400
