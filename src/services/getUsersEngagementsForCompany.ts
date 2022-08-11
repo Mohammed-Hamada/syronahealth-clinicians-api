@@ -34,6 +34,7 @@ const getUsersEngagementsForCompany = async (
       };
     },
   );
+
   const allEngagementsArray: string[] = [];
   const engagementsCounters: { [key: string]: number } = {};
   if (engagementsForAllUsers.length) {
@@ -53,6 +54,7 @@ const getUsersEngagementsForCompany = async (
       engagementsCounters[key] = 1;
     }
   });
+
   const arr = Object.entries(engagementsCounters).map((element) => ({
     counter: Math.round((element[1] / allEngagementsArray.length) * 100),
     label: element[0]
