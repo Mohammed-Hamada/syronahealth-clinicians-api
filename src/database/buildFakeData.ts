@@ -28,7 +28,7 @@ const buildFakeData = async (): Promise<void> => {
   }
 };
 
-if (databaseVars.NODE_ENV === 'development') {
+if (databaseVars.NODE_ENV === 'development' || databaseVars.NODE_ENV === 'production') {
   buildFakeData();
   console.log('Database Building: fake data has been built successfully.');
 }
