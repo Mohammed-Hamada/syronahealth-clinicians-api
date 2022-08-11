@@ -1,24 +1,11 @@
-import { Company, User, UserEngagement } from '../database/models';
+import { UserEngagement } from '../database/models';
 import CustomError from '../helpers';
+import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersEngagementsForCompany = async (
   companyId: number,
 ): Promise<object | string> => {
-  const companyData = await Company.findByPk(companyId, {
-    attributes: ['id'],
-    include: [
-      {
-        model: User,
-        attributes: ['id'],
-        duplicating: false,
-        include: [
-          {
-            model: UserEngagement,
-          },
-        ],
-      },
-    ],
-  });
+  const companyData = await getUsersStatesFromModel(companyId, UserEngagement);
   if (!companyData) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }
@@ -38,9 +25,14 @@ const getUsersEngagementsForCompany = async (
       UserEngagements: Array<{
         engagements: [];
       }>;
-    }) => ({
-      engagements: user.UserEngagements[0].engagements,
-    }),
+    }) => {
+      if (!user.UserEngagements.length) {
+        return { engagements: [] };
+      }
+      return {
+        engagements: user.UserEngagements[0].engagements,
+      };
+    },
   );
   const allEngagementsArray: string[] = [];
   const engagementsCounters: { [key: string]: number } = {};
