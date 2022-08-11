@@ -14,7 +14,7 @@ const getUsersInterestsForCompany = async (
       company: {
         id: companyData?.getDataValue('id'),
         name: companyData?.getDataValue('name'),
-        totalEngagements: [],
+        totalInterests: [],
       },
     };
   }

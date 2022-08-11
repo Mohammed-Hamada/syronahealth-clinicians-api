@@ -18,13 +18,19 @@ describe('Company Controllers', () => {
     expect(response.body.data).toHaveLength(10);
     expect(response.body.data[0]).toHaveProperty('id', 1);
   });
-  it('Get company by id from database', async () => {
+  it('Get company by id from database | <Company is exists>', async () => {
     const response: Response = await request(app).get('/api/v1/companies/2');
     expect(response.status).toBe(StatusCodes.OK);
     expect(response.body.message).toBe(SuccessMessages.SUCCESS);
     expect(response.body.data).toBeDefined();
     expect(response.body.data).toHaveProperty('id', 2);
     expect(response.body.data.name).toEqual('Wordpedia');
+  });
+  it('Get company by id from database | <Company is not exists>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/100')
+      .expect(StatusCodes.BAD_REQUEST);
+    expect(response.body.message).toBe('There is no company with id 100');
   });
 });
 
@@ -73,6 +79,56 @@ describe('UsersEngagements Controllers', () => {
     expect(response.body.data.company).toHaveProperty('id', 8);
     expect(response.body.data.company.totalEngagements).toBeInstanceOf(Array);
     expect(response.body.data.company.totalEngagements).toStrictEqual([]);
+  });
+});
+
+describe('UsersInterest Controllers', () => {
+  it('Get company interests for all employees: <Company is exists>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/1/users-interests')
+      .expect(StatusCodes.OK);
+
+    expect(response.body.message).toBe(SuccessMessages.SUCCESS);
+    expect(response.body.data).toBeDefined();
+    expect(response.body.data).toHaveProperty('company');
+    expect(response.body.data.company).toHaveProperty('id', 1);
+    expect(response.body.data.company.totalInterests).toBeInstanceOf(Array);
+    expect(response.body.data.company.totalInterests).toStrictEqual([
+      {
+        counter: 10,
+        label: 'Pregnancy',
+      },
+      {
+        counter: 8,
+        label: 'Wellbeing',
+      },
+      {
+        counter: 8,
+        label: 'Sexual Health',
+      },
+      {
+        counter: 74,
+        label: 'Others',
+      },
+    ]);
+  });
+  it('Get company interests for all employees: <Company is not exists>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/11/users-interests')
+      .expect(StatusCodes.BAD_REQUEST);
+    expect(response.body.message).toBe('There is no company with id 11');
+  });
+  it('Get company interests for all employees: <Company is exists | No users interests>', async () => {
+    const response: Response = await request(app)
+
+      .get('/api/v1/companies/8/users-interests')
+      .expect(StatusCodes.OK);
+    expect(response.body.message).toBe(SuccessMessages.SUCCESS);
+    expect(response.body.data).toBeDefined();
+    expect(response.body.data).toHaveProperty('company');
+    expect(response.body.data.company).toHaveProperty('id', 8);
+    expect(response.body.data.company.totalInterests).toBeInstanceOf(Array);
+    expect(response.body.data.company.totalInterests).toStrictEqual([]);
   });
 });
 
