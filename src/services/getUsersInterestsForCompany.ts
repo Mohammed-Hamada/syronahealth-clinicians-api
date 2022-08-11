@@ -18,6 +18,7 @@ const getUsersInterestsForCompany = async (
       },
     };
   }
+
   let interestsForAllUsers: [] = [];
   interestsForAllUsers = companyData?.toJSON().Users.map(
     (user: {
@@ -41,6 +42,7 @@ const getUsersInterestsForCompany = async (
       allInterestsArray.push(...interestsForOneUser.interests);
     });
   }
+
   allInterestsArray.forEach((interest) => {
     const key = interest.toLowerCase().split(' ').join('_');
 
@@ -50,28 +52,26 @@ const getUsersInterestsForCompany = async (
       interestsCounters[key] = 1;
     }
   });
+
   const arr = Object.entries(interestsCounters).map((element) => ({
     counter: Math.round((element[1] / allInterestsArray.length) * 100),
     label: element[0]
-
       .split('_')
       .map((word) => word[0].toUpperCase() + word.slice(1))
       .join(' '),
   }));
+
   const sortedInterests = arr.sort((a, b) => b.counter - a.counter);
   const topThreeInterests = sortedInterests.slice(0, 3);
   const othersInterests = sortedInterests
-
     .slice(3)
-    .map((interest) => ({
-      counter: interest.counter,
-      label: interest.label,
-    }))
     .reduce((acc, curr) => acc + curr.counter, 0);
+
   const totalInterests = [
     ...topThreeInterests,
     { counter: othersInterests, label: 'Others' },
   ];
+
   return {
     company: {
       id: companyData?.getDataValue('id'),
