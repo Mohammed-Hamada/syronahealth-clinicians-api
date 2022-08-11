@@ -1,8 +1,9 @@
 import { Company, User, UserEngagement } from '../database/models';
+import CustomError from '../helpers';
 
 const getUsersEngagementsForCompany = async (
   companyId: number,
-): Promise<object> => {
+): Promise<object | string> => {
   const companyData = await Company.findByPk(companyId, {
     attributes: ['id'],
     include: [
@@ -18,8 +19,21 @@ const getUsersEngagementsForCompany = async (
       },
     ],
   });
+  if (!companyData) {
+    throw new CustomError(`There is no company with id ${companyId}`, 400);
+  }
+  if (companyData.get({ plain: true }).Users.length === 0) {
+    return {
+      company: {
+        id: companyData?.getDataValue('id'),
+        name: companyData?.getDataValue('name'),
+        totalEngagements: [],
+      },
+    };
+  }
 
-  const engagementsForAllUsers: [] = companyData?.toJSON().Users.map(
+  let engagementsForAllUsers: [] = [];
+  engagementsForAllUsers = companyData?.toJSON().Users.map(
     (user: {
       UserEngagements: Array<{
         engagements: [];
@@ -28,15 +42,15 @@ const getUsersEngagementsForCompany = async (
       engagements: user.UserEngagements[0].engagements,
     }),
   );
-
   const allEngagementsArray: string[] = [];
   const engagementsCounters: { [key: string]: number } = {};
-
-  engagementsForAllUsers.forEach(
-    (engagementsForOneUser: { engagements: [] }) => {
-      allEngagementsArray.push(...engagementsForOneUser.engagements);
-    },
-  );
+  if (engagementsForAllUsers.length) {
+    engagementsForAllUsers.forEach(
+      (engagementsForOneUser: { engagements: [] }) => {
+        allEngagementsArray.push(...engagementsForOneUser.engagements);
+      },
+    );
+  }
 
   allEngagementsArray.forEach((engagement) => {
     const key = engagement.toLowerCase().split(' ').join('_');
