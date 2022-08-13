@@ -54,7 +54,7 @@ const getUsersInterestsForCompany = async (
   });
 
   const arr = Object.entries(interestsCounters).map((element) => ({
-    percentage: Math.round((element[1] / allInterestsArray.length) * 100),
+    percentage: (element[1] / allInterestsArray.length) * 100,
     label: element[0]
       .split('_')
       .map((word) => word[0].toUpperCase() + word.slice(1))
@@ -63,13 +63,13 @@ const getUsersInterestsForCompany = async (
 
   const sortedInterests = arr.sort((a, b) => b.percentage - a.percentage);
   const topThreeInterests = sortedInterests.slice(0, 3);
-  const othersInterests = sortedInterests
+  const otherInterests = sortedInterests
     .slice(3)
     .reduce((acc, curr) => acc + curr.percentage, 0);
 
   const totalInterests = [
     ...topThreeInterests,
-    { percentage: othersInterests, label: 'Others' },
+    { percentage: otherInterests, label: 'Others' },
   ];
 
   return {

@@ -10,7 +10,7 @@ const getEmployeesGenderForCompany = async (
     throw new CustomError(`There is no company with id ${companyId}`, StatusCodes.BAD_REQUEST);
   }
 
-  const genderData = await User.findAll({
+  const genderData = await User.findAndCountAll({
     include: {
       model: Employee,
       where: {
@@ -21,7 +21,7 @@ const getEmployeesGenderForCompany = async (
     },
     attributes: ['gender'],
   });
-  if (!genderData.length) {
+  if (!genderData.rows.length) {
     return {
       company: {
         id: companyId,
@@ -30,7 +30,7 @@ const getEmployeesGenderForCompany = async (
     };
   }
   const allGendersArray: string[] = [];
-  genderData.forEach((user) => {
+  genderData.rows.forEach((user) => {
     if (!user.toJSON().gender) {
       allGendersArray.push('Others');
     } else allGendersArray.push(user.toJSON().gender);
@@ -61,7 +61,7 @@ const getEmployeesGenderForCompany = async (
   });
 
   const arr = Object.entries(genderCounters).map((element) => ({
-    count: Math.round((element[1] / allGendersArray.length) * 100),
+    count: element[1],
     label: element[0]
       .split('_')
       .map((word) => word[0].toUpperCase() + word.slice(1))
@@ -72,6 +72,7 @@ const getEmployeesGenderForCompany = async (
     company: {
       id: companyId,
       employeesGender: arr,
+      employeesCount: genderData.count,
     },
   };
 };
