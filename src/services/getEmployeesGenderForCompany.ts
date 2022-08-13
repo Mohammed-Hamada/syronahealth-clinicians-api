@@ -26,6 +26,7 @@ const getEmployeesGenderForCompany = async (
       company: {
         id: companyId,
         employeesGender: [],
+        employeesCount: 0,
       },
     };
   }
