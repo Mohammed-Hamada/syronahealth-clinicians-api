@@ -54,22 +54,22 @@ const getUsersInterestsForCompany = async (
   });
 
   const arr = Object.entries(interestsCounters).map((element) => ({
-    counter: Math.round((element[1] / allInterestsArray.length) * 100),
+    percentage: Math.round((element[1] / allInterestsArray.length) * 100),
     label: element[0]
       .split('_')
       .map((word) => word[0].toUpperCase() + word.slice(1))
       .join(' '),
   }));
 
-  const sortedInterests = arr.sort((a, b) => b.counter - a.counter);
+  const sortedInterests = arr.sort((a, b) => b.percentage - a.percentage);
   const topThreeInterests = sortedInterests.slice(0, 3);
   const othersInterests = sortedInterests
     .slice(3)
-    .reduce((acc, curr) => acc + curr.counter, 0);
+    .reduce((acc, curr) => acc + curr.percentage, 0);
 
   const totalInterests = [
     ...topThreeInterests,
-    { counter: othersInterests, label: 'Others' },
+    { percentage: othersInterests, label: 'Others' },
   ];
 
   return {
