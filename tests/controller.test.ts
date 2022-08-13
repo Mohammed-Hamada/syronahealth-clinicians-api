@@ -46,19 +46,19 @@ describe('UsersEngagements Controllers', () => {
     expect(response.body.data.company.totalEngagements).toBeInstanceOf(Array);
     expect(response.body.data.company.totalEngagements).toStrictEqual([
       {
-        counter: 16,
+        percentage: 16,
         label: 'Added A Note',
       },
       {
-        counter: 15,
+        percentage: 15,
         label: 'Commented On A Blog',
       },
       {
-        counter: 11,
+        percentage: 11,
         label: 'Completed A Module',
       },
       {
-        counter: 56,
+        percentage: 56,
         label: 'Others',
       },
     ]);
@@ -95,19 +95,19 @@ describe('UsersInterest Controllers', () => {
     expect(response.body.data.company.totalInterests).toBeInstanceOf(Array);
     expect(response.body.data.company.totalInterests).toStrictEqual([
       {
-        counter: 10,
+        percentage: 10,
         label: 'Pregnancy',
       },
       {
-        counter: 8,
+        percentage: 8,
         label: 'Wellbeing',
       },
       {
-        counter: 8,
+        percentage: 8,
         label: 'Sexual Health',
       },
       {
-        counter: 74,
+        percentage: 74,
         label: 'Others',
       },
     ]);
