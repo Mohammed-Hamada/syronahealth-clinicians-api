@@ -189,6 +189,7 @@ describe('UsersGenders Controller', () => {
     expect(response.body.data.company).toHaveProperty('id', 8);
     expect(response.body.data.company.employeesGender).toBeInstanceOf(Array);
     expect(response.body.data.company.employeesGender).toStrictEqual([]);
+    expect(response.body.data.company.employeesCount).toStrictEqual(0);
   });
 });
 
