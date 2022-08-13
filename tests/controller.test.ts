@@ -46,19 +46,19 @@ describe('UsersEngagements Controller', () => {
     expect(response.body.data.company.totalEngagements).toBeInstanceOf(Array);
     expect(response.body.data.company.totalEngagements).toStrictEqual([
       {
-        percentage: 16,
+        percentage: 16.411378555798688,
         label: 'Added A Note',
       },
       {
-        percentage: 15,
+        percentage: 15.317286652078774,
         label: 'Commented On A Blog',
       },
       {
-        percentage: 11,
-        label: 'Completed A Module',
+        percentage: 11.37855579868709,
+        label: 'Booked Consultation',
       },
       {
-        percentage: 56,
+        percentage: 56.892778993435456,
         label: 'Others',
       },
     ]);
@@ -95,19 +95,19 @@ describe('UsersInterests Controller', () => {
     expect(response.body.data.company.totalInterests).toBeInstanceOf(Array);
     expect(response.body.data.company.totalInterests).toStrictEqual([
       {
-        percentage: 10,
+        percentage: 10.256410256410255,
         label: 'Pregnancy',
       },
       {
-        percentage: 8,
+        percentage: 7.6923076923076925,
         label: 'Wellbeing',
       },
       {
-        percentage: 8,
+        percentage: 7.6923076923076925,
         label: 'Sexual Health',
       },
       {
-        percentage: 74,
+        percentage: 74.35897435897435,
         label: 'Others',
       },
     ]);
@@ -143,27 +143,27 @@ describe('UsersGenders Controller', () => {
     expect(response.body.data.company.employeesGender).toBeInstanceOf(Array);
     expect(response.body.data.company.employeesGender).toStrictEqual([
       {
-        count: 10,
+        count: 8,
         label: 'Others',
       },
       {
-        count: 51,
+        count: 41,
         label: 'Male',
       },
       {
-        count: 3,
+        count: 2,
         label: 'Transfemale',
       },
       {
-        count: 31,
+        count: 25,
         label: 'Female',
       },
       {
-        count: 3,
+        count: 2,
         label: 'Prefer Not To Say',
       },
       {
-        count: 3,
+        count: 2,
         label: 'None Or Agender',
       },
       {
@@ -171,6 +171,7 @@ describe('UsersGenders Controller', () => {
         label: 'Transmale',
       },
     ]);
+    expect(response.body.data.company.employeesCount).toStrictEqual(80);
   });
   it('Get company genders for all employees: <Company is not exists>', async () => {
     const response: Response = await request(app)
@@ -178,7 +179,7 @@ describe('UsersGenders Controller', () => {
       .expect(StatusCodes.BAD_REQUEST);
     expect(response.body.message).toBe('There is no company with id 11');
   });
-  it('Get company interests for all employees: <Company is exists | No employees>', async () => {
+  it('Get company genders for all employees: <Company is exists | No employees>', async () => {
     const response: Response = await request(app)
       .get('/api/v1/companies/8/employees-gender')
       .expect(StatusCodes.OK);
@@ -191,6 +192,95 @@ describe('UsersGenders Controller', () => {
   });
 });
 
+describe('UserHealthConditions Controller', () => {
+  it('Get company health conditions for all employees: <Company is exists>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/1/users-health-conditions')
+      .expect(StatusCodes.OK);
+    expect(response.body.message).toBe(SuccessMessages.SUCCESS);
+    expect(response.body.data).toBeDefined();
+    expect(response.body.data).toHaveProperty('company');
+    expect(response.body.data.company).toHaveProperty('id', 1);
+    expect(response.body.data.company.topThreeHealthConditions).toBeInstanceOf(Array);
+    expect(response.body.data.company.topThreeHealthConditions).toStrictEqual([
+      {
+        percentage: 19.047619047619047,
+        label: 'Hair Loss',
+      },
+      {
+        percentage: 14.285714285714285,
+        label: 'Stress',
+      },
+      {
+        percentage: 14.285714285714285,
+        label: 'Depression',
+      },
+    ]);
+    expect(response.body.data.company.allHealthConditions).toStrictEqual([
+      {
+        percentage: 19.047619047619047,
+        label: 'Hair Loss',
+      },
+      {
+        percentage: 14.285714285714285,
+        label: 'Stress',
+      },
+      {
+        percentage: 14.285714285714285,
+        label: 'Depression',
+      },
+      {
+        percentage: 9.523809523809524,
+        label: 'High Blood Pressure',
+      },
+      {
+        percentage: 9.523809523809524,
+        label: 'High Cholesterol',
+      },
+      {
+        percentage: 9.523809523809524,
+        label: "Alzheimer's Disease",
+      },
+      {
+        percentage: 4.761904761904762,
+        label: 'Leukemia',
+      },
+      {
+        percentage: 4.761904761904762,
+        label: 'Heart Disease',
+      },
+      {
+        percentage: 4.761904761904762,
+        label: 'Infertility',
+      },
+      {
+        percentage: 4.761904761904762,
+        label: 'Chronic Obstructive Pulmonary Disease (copd)',
+      },
+      {
+        percentage: 4.761904761904762,
+        label: 'Endo',
+      },
+    ]);
+  });
+  it('Get company health conditions for all employees: <Company is not exists>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/11/users-health-conditions')
+      .expect(StatusCodes.BAD_REQUEST);
+    expect(response.body.message).toBe('There is no company with id 11');
+  });
+  it('Get company health conditions for all employees: <Company is exists | No employees>', async () => {
+    const response: Response = await request(app)
+      .get('/api/v1/companies/8/users-health-conditions')
+      .expect(StatusCodes.OK);
+    expect(response.body.message).toBe(SuccessMessages.SUCCESS);
+    expect(response.body.data).toBeDefined();
+    expect(response.body.data).toHaveProperty('company');
+    expect(response.body.data.company).toHaveProperty('id', 8);
+    expect(response.body.data.company.totalHealthConditions).toBeInstanceOf(Array);
+    expect(response.body.data.company.totalHealthConditions).toStrictEqual([]);
+  });
+});
 afterAll(async () => {
   await sequelize.close();
 });
