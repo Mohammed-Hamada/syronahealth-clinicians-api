@@ -7,7 +7,10 @@ const getEmployeesGenderForCompany = async (
 ): Promise<object> => {
   const companiesCount = await Company.count({ where: { id: companyId } });
   if (!companiesCount) {
-    throw new CustomError(`There is no company with id ${companyId}`, StatusCodes.BAD_REQUEST);
+    throw new CustomError(
+      `There is no company with id ${companyId}`,
+      StatusCodes.BAD_REQUEST,
+    );
   }
 
   const genderData = await User.findAndCountAll({
@@ -49,13 +52,13 @@ const getEmployeesGenderForCompany = async (
   });
 
   const genderKeys = [
-    'male',
     'female',
+    'male',
     'transfemale',
     'transmale',
-    'prefer_not_to_say',
-    'others',
     'none_or_agender',
+    'others',
+    'prefer_not_to_say',
   ];
   genderKeys.forEach((key) => {
     if (!genderCounters[key]) genderCounters[key] = 0;
@@ -69,10 +72,28 @@ const getEmployeesGenderForCompany = async (
       .join(' '),
   }));
 
+  const [
+    female,
+    male,
+    nonOrAgender,
+    others,
+    preferNotTosay,
+    transfemale,
+    transmale,
+  ] = arr.sort((a, b) => (a.label > b.label ? 1 : b.label > a.label ? -1 : 0));
+
   return {
     company: {
       id: companyId,
-      employeesGender: arr,
+      employeesGender: [
+        female,
+        male,
+        transfemale,
+        transmale,
+        nonOrAgender,
+        others,
+        preferNotTosay,
+      ],
       employeesCount: genderData.count,
     },
   };
