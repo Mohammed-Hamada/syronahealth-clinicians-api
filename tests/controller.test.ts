@@ -143,8 +143,8 @@ describe('UsersGenders Controller', () => {
     expect(response.body.data.company.employeesGender).toBeInstanceOf(Array);
     expect(response.body.data.company.employeesGender).toStrictEqual([
       {
-        count: 8,
-        label: 'Others',
+        count: 25,
+        label: 'Female',
       },
       {
         count: 41,
@@ -155,20 +155,20 @@ describe('UsersGenders Controller', () => {
         label: 'Transfemale',
       },
       {
-        count: 25,
-        label: 'Female',
-      },
-      {
-        count: 2,
-        label: 'Prefer Not To Say',
+        count: 0,
+        label: 'Transmale',
       },
       {
         count: 2,
         label: 'None Or Agender',
       },
       {
-        count: 0,
-        label: 'Transmale',
+        count: 8,
+        label: 'Others',
+      },
+      {
+        count: 2,
+        label: 'Prefer Not To Say',
       },
     ]);
     expect(response.body.data.company.employeesCount).toStrictEqual(80);
@@ -202,7 +202,9 @@ describe('UserHealthConditions Controller', () => {
     expect(response.body.data).toBeDefined();
     expect(response.body.data).toHaveProperty('company');
     expect(response.body.data.company).toHaveProperty('id', 1);
-    expect(response.body.data.company.topThreeHealthConditions).toBeInstanceOf(Array);
+    expect(response.body.data.company.topThreeHealthConditions).toBeInstanceOf(
+      Array,
+    );
     expect(response.body.data.company.topThreeHealthConditions).toStrictEqual([
       {
         percentage: 19.047619047619047,
@@ -278,7 +280,9 @@ describe('UserHealthConditions Controller', () => {
     expect(response.body.data).toBeDefined();
     expect(response.body.data).toHaveProperty('company');
     expect(response.body.data.company).toHaveProperty('id', 8);
-    expect(response.body.data.company.totalHealthConditions).toBeInstanceOf(Array);
+    expect(response.body.data.company.totalHealthConditions).toBeInstanceOf(
+      Array,
+    );
     expect(response.body.data.company.totalHealthConditions).toStrictEqual([]);
   });
 });
