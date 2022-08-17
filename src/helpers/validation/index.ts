@@ -1,4 +1,4 @@
-import validateParam from './queryParams';
+import validateCompany from './company';
 import validateUser from './user';
 
-export { validateUser, validateParam };
+export { validateUser, validateCompany };

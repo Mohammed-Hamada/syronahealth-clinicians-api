@@ -1,10 +1,10 @@
-interface ValidateUser {
+interface UserShape {
   /**
    * This is the type of process.
    ** `'add'` for add user process,
    ** `'update'` for update user process
    */
-  type: 'add' | 'update';
+  type?: 'add' | 'update';
   /**
    * The name of the user
    ** It should be added when type is `'add'`
@@ -71,4 +71,4 @@ interface ValidateUser {
   allow_data_sharing?: boolean;
 }
 
-export default ValidateUser;
+export default UserShape;

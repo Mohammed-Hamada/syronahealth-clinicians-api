@@ -1,11 +1,11 @@
 import joi from 'joi';
-import { ValidateUser } from '../../interfaces';
+import { UserShape } from '../../interfaces';
 
 /**
- * @param {ValidateUser} object This is user object to validate
+ * @param {UserShape} object This is user object to validate
  * @returns {Promise<object>} Promise object represents the valid object
  */
-const validateUser = (object: ValidateUser): Promise<object> => {
+const validateUser = (object: UserShape): Promise<object> => {
   const userSchema: joi.ObjectSchema<string | boolean | number | Date> = joi
     .object()
     .keys({

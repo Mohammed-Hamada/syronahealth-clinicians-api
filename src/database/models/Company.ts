@@ -24,7 +24,10 @@ const Company = sequelize.define('Company', {
   uniqueCode: {
     type: DataTypes.CHAR(6),
     allowNull: false,
-    unique: true,
+    unique: {
+      msg: 'unique code is already in use',
+      name: 'uniqueCode',
+    },
     validate: {
       notEmpty: {
         msg: 'Unique code is required',
@@ -32,6 +35,19 @@ const Company = sequelize.define('Company', {
       len: {
         args: [6, 6],
         msg: 'Unique code must be 6 characters',
+      },
+    },
+  },
+  subscriptionType: {
+    type: DataTypes.CHAR(3),
+    allowNull: false,
+    validate: {
+      isIn: {
+        args: [['1', '2']],
+        msg: 'Subscription type must be 1 for lite or 2 for premium',
+      },
+      notEmpty: {
+        msg: 'Subscription type is required',
       },
     },
   },

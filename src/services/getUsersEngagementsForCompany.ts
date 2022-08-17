@@ -56,22 +56,22 @@ const getUsersEngagementsForCompany = async (
   });
 
   const arr = Object.entries(engagementsCounters).map((element) => ({
-    counter: Math.round((element[1] / allEngagementsArray.length) * 100),
+    percentage: (element[1] / allEngagementsArray.length) * 100,
     label: element[0]
       .split('_')
       .map((word) => word[0].toUpperCase() + word.slice(1))
       .join(' '),
   }));
 
-  const sortedEngagements = arr.sort((a, b) => b.counter - a.counter);
+  const sortedEngagements = arr.sort((a, b) => b.percentage - a.percentage);
   const topThreeEngagements = sortedEngagements.slice(0, 3);
-  const othersEngagements = sortedEngagements
+  const otherEngagements = sortedEngagements
     .slice(3)
-    .reduce((acc, curr) => acc + curr.counter, 0);
+    .reduce((acc, curr) => acc + curr.percentage, 0);
 
   const totalEngagements = [
     ...topThreeEngagements,
-    { counter: othersEngagements, label: 'Others' },
+    { percentage: otherEngagements, label: 'Others' },
   ];
 
   return {

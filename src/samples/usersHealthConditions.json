@@ -38,5 +38,53 @@
   {
     "user": 1,
     "healthConditions": ["Stress", "Hair loss", "Depression"]
+  },
+  {
+    "user": 121,
+    "healthConditions": ["Stress", "Hair loss", "Depression"]
+  },
+  {
+    "user": 21,
+    "healthConditions": ["Leukemia"]
+  },
+  {
+    "user": 32,
+    "healthConditions": ["Infertility"]
+  },
+  {
+    "user": 53,
+    "healthConditions": ["Hair loss", "Heart Disease"]
+  },
+  {
+    "user": 72,
+    "healthConditions": ["Alzheimer's disease"]
+  },
+  {
+    "user": 91,
+    "healthConditions": ["Chronic obstructive pulmonary disease (COPD)"]
+  },
+  {
+    "user": 102,
+    "healthConditions": ["Endo"]
+  },
+  {
+    "user": 63,
+    "healthConditions": ["High blood pressure", "High cholesterol"]
+  },
+  {
+    "user": 83,
+    "healthConditions": ["Alzheimer's disease"]
+  },
+  {
+    "user": 41,
+    "healthConditions": ["Infertility", "High cholesterol"]
+  },
+  {
+    "user": 111,
+    "healthConditions": ["Stress", "Hair loss", "Depression"]
+  },
+  {
+    "user": 122,
+    "healthConditions": ["Stress", "Hair loss", "Depression"]
   }
 ]
