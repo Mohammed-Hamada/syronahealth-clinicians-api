@@ -13,7 +13,7 @@ import {
 
 const buildFakeData = async (): Promise<void> => {
   try {
-    console.log('Database Building: building fake data...');
+    // console.log('Database Building: building fake data...');
     await sequelize.sync({ force: true });
     await User.bulkCreate(users);
     await Company.bulkCreate(companies);
@@ -30,7 +30,7 @@ const buildFakeData = async (): Promise<void> => {
 
 if (databaseVars.NODE_ENV === 'development' || databaseVars.NODE_ENV === 'production') {
   buildFakeData();
-  console.log('Database Building: fake data has been built successfully.');
+  // console.log('Database Building: fake data has been built successfully.');
 }
 
 export default buildFakeData;

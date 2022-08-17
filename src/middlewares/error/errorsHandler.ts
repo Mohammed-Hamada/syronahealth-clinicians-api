@@ -12,7 +12,6 @@ const errorsHandler = (
   if (status) {
     return response.status(status).json({ message });
   }
-  console.log(message);
   return response
     .status(StatusCodes.INTERNAL_SERVER_ERROR)
     .json({ message: ErrorsMessages.INTERNAL_SERVER_ERROR });
