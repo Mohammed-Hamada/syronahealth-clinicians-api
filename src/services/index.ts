@@ -6,6 +6,7 @@ import getUsersEngagementsForCompany from './getUsersEngagementsForCompany';
 import getUsersHealthConditionsForCompany from './getUsersHealthConditionsForCompany';
 import getUsersInterestsForCompany from './getUsersInterestsForCompany';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
+import updateExistingCompany from './updateExistingCompany';
 
 export {
   getAllCompanies,
@@ -16,4 +17,5 @@ export {
   getEmployeesGenderForCompany,
   getUsersHealthConditionsForCompany,
   addNewCompany,
+  updateExistingCompany,
 };

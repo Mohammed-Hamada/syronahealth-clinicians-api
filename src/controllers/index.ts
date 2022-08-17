@@ -1,4 +1,9 @@
-import { createCompany, sendAllCompanies, sendCompanyById } from './companies';
+import {
+  createCompany,
+  sendAllCompanies,
+  sendCompanyById,
+  updateCompany,
+} from './companies';
 import sendEmployeesGenderForCompany from './employeesGender';
 import sendUsersEngagementsForCompany from './userEngagements';
 import sendUsersHealthConditionsForCompany from './userHealthConditions';
@@ -12,4 +17,5 @@ export {
   sendEmployeesGenderForCompany,
   sendUsersHealthConditionsForCompany,
   createCompany,
+  updateCompany,
 };
