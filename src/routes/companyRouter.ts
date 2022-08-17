@@ -7,11 +7,12 @@ import {
   sendUsersEngagementsForCompany,
   sendUsersHealthConditionsForCompany,
   sendUsersInterestsForCompany,
+  updateCompany,
 } from '../controllers';
 
 const companyRouter = Router();
-companyRouter.get('/', sendAllCompanies).post('/', createCompany);
-companyRouter.get('/:id', sendCompanyById);
+companyRouter.route('/').get(sendAllCompanies).post(createCompany);
+companyRouter.route('/:id').get(sendCompanyById).patch(updateCompany);
 companyRouter.get('/:id/users-engagements', sendUsersEngagementsForCompany);
 companyRouter.get('/:id/users-interests', sendUsersInterestsForCompany);
 companyRouter.get(
