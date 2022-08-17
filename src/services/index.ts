@@ -1,3 +1,4 @@
+import addNewCompany from './addNewCompany';
 import getAllCompanies from './getAllCompanies';
 import getCompanyById from './getCompanyById';
 import getEmployeesGenderForCompany from './getEmployeesGenderForCompany';
@@ -14,4 +15,5 @@ export {
   getUsersInterestsForCompany,
   getEmployeesGenderForCompany,
   getUsersHealthConditionsForCompany,
+  addNewCompany,
 };

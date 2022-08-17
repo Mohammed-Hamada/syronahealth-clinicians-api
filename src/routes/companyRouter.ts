@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  createCompany,
   sendAllCompanies,
   sendCompanyById,
   sendEmployeesGenderForCompany,
@@ -9,7 +10,7 @@ import {
 } from '../controllers';
 
 const companyRouter = Router();
-companyRouter.get('/', sendAllCompanies);
+companyRouter.get('/', sendAllCompanies).post('/', createCompany);
 companyRouter.get('/:id', sendCompanyById);
 companyRouter.get('/:id/users-engagements', sendUsersEngagementsForCompany);
 companyRouter.get('/:id/users-interests', sendUsersInterestsForCompany);
