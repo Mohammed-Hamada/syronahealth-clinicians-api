@@ -8,6 +8,6 @@ const getCompanyById = async (id: number): Promise<CompanyShape> => {
   if (!company) {
     throw new CustomError(`There is no company with id ${id}`, StatusCodes.BAD_REQUEST);
   }
-  return company as CompanyShape;
+  return company.toJSON() as CompanyShape;
 };
 export default getCompanyById;
