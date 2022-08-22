@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import { Company } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import { CompanyShape } from '../interfaces';
 
 const getCompanyById = async (id: number): Promise<CompanyShape> => {
