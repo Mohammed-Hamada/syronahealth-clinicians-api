@@ -9,7 +9,6 @@
     "coins": 221,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -23,7 +22,6 @@
     "coins": 788,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -37,7 +35,6 @@
     "coins": 244,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -51,7 +48,6 @@
     "coins": 702,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -65,7 +61,6 @@
     "coins": 503,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -79,7 +74,6 @@
     "coins": 173,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -93,7 +87,6 @@
     "coins": 783,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -107,7 +100,6 @@
     "coins": 329,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -121,7 +113,6 @@
     "coins": 48,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -135,7 +126,6 @@
     "coins": 422,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -149,7 +139,6 @@
     "coins": 564,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -163,7 +152,6 @@
     "coins": 771,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -177,7 +165,6 @@
     "coins": 6,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -191,7 +178,6 @@
     "coins": 259,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -205,7 +191,6 @@
     "coins": 883,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -219,7 +204,6 @@
     "coins": 793,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -233,7 +217,6 @@
     "coins": 658,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -247,7 +230,6 @@
     "coins": 793,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -261,7 +243,6 @@
     "coins": 643,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -275,7 +256,6 @@
     "coins": 742,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -289,7 +269,6 @@
     "coins": 709,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -303,7 +282,6 @@
     "coins": 444,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -317,7 +295,6 @@
     "coins": 705,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -331,7 +308,6 @@
     "coins": 60,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -345,7 +321,6 @@
     "coins": 599,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -359,7 +334,6 @@
     "coins": 809,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -373,7 +347,6 @@
     "coins": 382,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -387,7 +360,6 @@
     "coins": 450,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -401,7 +373,6 @@
     "coins": 697,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -415,7 +386,6 @@
     "coins": 396,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -429,7 +399,6 @@
     "coins": 517,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -443,7 +412,6 @@
     "coins": 697,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -457,7 +425,6 @@
     "coins": 878,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -471,7 +438,6 @@
     "coins": 738,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -485,7 +451,6 @@
     "coins": 148,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -499,7 +464,6 @@
     "coins": 615,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -513,7 +477,6 @@
     "coins": 124,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -527,7 +490,6 @@
     "coins": 929,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -541,7 +503,6 @@
     "coins": 115,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -555,7 +516,6 @@
     "coins": 199,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -569,7 +529,6 @@
     "coins": 732,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -583,7 +542,6 @@
     "coins": 944,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -597,7 +555,6 @@
     "coins": 62,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -611,7 +568,6 @@
     "coins": 664,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -625,7 +581,6 @@
     "coins": 606,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -639,7 +594,6 @@
     "coins": 843,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -653,7 +607,6 @@
     "coins": 119,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -667,7 +620,6 @@
     "coins": 532,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -681,7 +633,6 @@
     "coins": 498,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -695,7 +646,6 @@
     "coins": 583,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -709,7 +659,6 @@
     "coins": 335,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -723,7 +672,6 @@
     "coins": 343,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -737,7 +685,6 @@
     "coins": 240,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -751,7 +698,6 @@
     "coins": 725,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -765,7 +711,6 @@
     "coins": 220,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -779,7 +724,6 @@
     "coins": 704,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -793,7 +737,6 @@
     "coins": 493,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -807,7 +750,6 @@
     "coins": 328,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -821,7 +763,6 @@
     "coins": 178,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -835,7 +776,6 @@
     "coins": 699,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -849,7 +789,6 @@
     "coins": 334,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -863,7 +802,6 @@
     "coins": 802,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -877,7 +815,6 @@
     "coins": 581,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -891,7 +828,6 @@
     "coins": 663,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -905,7 +841,6 @@
     "coins": 417,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -919,7 +854,6 @@
     "coins": 10,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -933,7 +867,6 @@
     "coins": 730,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -947,7 +880,6 @@
     "coins": 749,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -961,7 +893,6 @@
     "coins": 937,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -975,7 +906,6 @@
     "coins": 385,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -989,7 +919,6 @@
     "coins": 615,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1003,7 +932,6 @@
     "coins": 267,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1017,7 +945,6 @@
     "coins": 992,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1031,7 +958,6 @@
     "coins": 880,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1045,7 +971,6 @@
     "coins": 779,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1059,7 +984,6 @@
     "coins": 74,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1073,7 +997,6 @@
     "coins": 481,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1087,7 +1010,6 @@
     "coins": 707,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1101,7 +1023,6 @@
     "coins": 652,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1115,7 +1036,6 @@
     "coins": 521,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1129,7 +1049,6 @@
     "coins": 890,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1143,7 +1062,6 @@
     "coins": 882,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1157,7 +1075,6 @@
     "coins": 427,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1171,7 +1088,6 @@
     "coins": 837,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1185,7 +1101,6 @@
     "coins": 927,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1199,7 +1114,6 @@
     "coins": 259,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1213,7 +1127,6 @@
     "coins": 809,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1227,7 +1140,6 @@
     "coins": 684,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1241,7 +1153,6 @@
     "coins": 798,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1255,7 +1166,6 @@
     "coins": 711,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1269,7 +1179,6 @@
     "coins": 368,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1283,7 +1192,6 @@
     "coins": 395,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1297,7 +1205,6 @@
     "coins": 592,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1311,7 +1218,6 @@
     "coins": 705,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1325,7 +1231,6 @@
     "coins": 949,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1339,7 +1244,6 @@
     "coins": 512,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1353,7 +1257,6 @@
     "coins": 686,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1367,7 +1270,6 @@
     "coins": 157,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1381,7 +1283,6 @@
     "coins": 589,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1395,7 +1296,6 @@
     "coins": 207,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1409,7 +1309,6 @@
     "coins": 329,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1423,7 +1322,6 @@
     "coins": 681,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1437,7 +1335,6 @@
     "coins": 259,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1451,7 +1348,6 @@
     "coins": 336,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1465,7 +1361,6 @@
     "coins": 382,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1479,7 +1374,6 @@
     "coins": 2,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1493,7 +1387,6 @@
     "coins": 524,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1507,7 +1400,6 @@
     "coins": 475,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1521,7 +1413,6 @@
     "coins": 402,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1535,7 +1426,6 @@
     "coins": 870,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1549,7 +1439,6 @@
     "coins": 793,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1563,7 +1452,6 @@
     "coins": 626,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1577,7 +1465,6 @@
     "coins": 396,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1591,7 +1478,6 @@
     "coins": 453,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1605,7 +1491,6 @@
     "coins": 610,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1619,7 +1504,6 @@
     "coins": 70,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1633,7 +1517,6 @@
     "coins": 903,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1647,7 +1530,6 @@
     "coins": 617,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1661,7 +1543,6 @@
     "coins": 275,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1675,7 +1556,6 @@
     "coins": 166,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1689,7 +1569,6 @@
     "coins": 450,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1703,7 +1582,6 @@
     "coins": 856,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1717,7 +1595,6 @@
     "coins": 92,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1731,7 +1608,6 @@
     "coins": 969,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1745,7 +1621,6 @@
     "coins": 668,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1759,7 +1634,6 @@
     "coins": 797,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1773,7 +1647,6 @@
     "coins": 336,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1787,7 +1660,6 @@
     "coins": 561,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1801,7 +1673,6 @@
     "coins": 58,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1815,7 +1686,6 @@
     "coins": 832,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1829,7 +1699,6 @@
     "coins": 675,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1843,7 +1712,6 @@
     "coins": 685,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1857,7 +1725,6 @@
     "coins": 330,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1871,7 +1738,6 @@
     "coins": 440,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1885,7 +1751,6 @@
     "coins": 302,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -1899,7 +1764,6 @@
     "coins": 446,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1913,7 +1777,6 @@
     "coins": 847,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1927,7 +1790,6 @@
     "coins": 136,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1941,7 +1803,6 @@
     "coins": 720,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1955,7 +1816,6 @@
     "coins": 124,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -1969,7 +1829,6 @@
     "coins": 750,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -1983,7 +1842,6 @@
     "coins": 893,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -1997,7 +1855,6 @@
     "coins": 175,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2011,7 +1868,6 @@
     "coins": 247,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2025,7 +1881,6 @@
     "coins": 764,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2039,7 +1894,6 @@
     "coins": 36,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2053,7 +1907,6 @@
     "coins": 452,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2067,7 +1920,6 @@
     "coins": 901,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2081,7 +1933,6 @@
     "coins": 476,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2095,7 +1946,6 @@
     "coins": 166,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2109,7 +1959,6 @@
     "coins": 985,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2123,7 +1972,6 @@
     "coins": 198,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2137,7 +1985,6 @@
     "coins": 568,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2151,7 +1998,6 @@
     "coins": 340,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2165,7 +2011,6 @@
     "coins": 118,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2179,7 +2024,6 @@
     "coins": 368,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2193,7 +2037,6 @@
     "coins": 389,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2207,7 +2050,6 @@
     "coins": 915,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2221,7 +2063,6 @@
     "coins": 616,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2235,7 +2076,6 @@
     "coins": 147,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2249,7 +2089,6 @@
     "coins": 835,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2263,7 +2102,6 @@
     "coins": 54,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2277,7 +2115,6 @@
     "coins": 175,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2291,7 +2128,6 @@
     "coins": 410,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2305,7 +2141,6 @@
     "coins": 364,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2319,7 +2154,6 @@
     "coins": 954,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2333,7 +2167,6 @@
     "coins": 593,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2347,7 +2180,6 @@
     "coins": 339,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2361,7 +2193,6 @@
     "coins": 961,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2375,7 +2206,6 @@
     "coins": 958,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2389,7 +2219,6 @@
     "coins": 545,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2403,7 +2232,6 @@
     "coins": 425,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2417,7 +2245,6 @@
     "coins": 95,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2431,7 +2258,6 @@
     "coins": 721,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2445,7 +2271,6 @@
     "coins": 861,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2459,7 +2284,6 @@
     "coins": 325,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2473,7 +2297,6 @@
     "coins": 406,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2487,7 +2310,6 @@
     "coins": 340,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2501,7 +2323,6 @@
     "coins": 214,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2515,7 +2336,6 @@
     "coins": 437,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2529,7 +2349,6 @@
     "coins": 715,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2543,7 +2362,6 @@
     "coins": 165,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2557,7 +2375,6 @@
     "coins": 657,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2571,7 +2388,6 @@
     "coins": 448,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2585,7 +2401,6 @@
     "coins": 506,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2599,7 +2414,6 @@
     "coins": 554,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2613,7 +2427,6 @@
     "coins": 965,
     "isActive": false,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2627,7 +2440,6 @@
     "coins": 358,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2641,7 +2453,6 @@
     "coins": 867,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2655,7 +2466,6 @@
     "coins": 805,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2669,7 +2479,6 @@
     "coins": 872,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2683,7 +2492,6 @@
     "coins": 426,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2697,7 +2505,6 @@
     "coins": 222,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": true,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2711,7 +2518,6 @@
     "coins": 501,
     "isActive": false,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   },
@@ -2725,7 +2531,6 @@
     "coins": 764,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": false,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2739,7 +2544,6 @@
     "coins": 417,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2753,7 +2557,6 @@
     "coins": 406,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": false
   },
@@ -2767,7 +2570,6 @@
     "coins": 125,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": true
   },
@@ -2781,7 +2583,6 @@
     "coins": 195,
     "isActive": true,
     "isStaff": false,
-    "isSuperuser": false,
     "isDeleted": true,
     "isBusiness": true
   },
@@ -2795,7 +2596,6 @@
     "coins": 577,
     "isActive": true,
     "isStaff": true,
-    "isSuperuser": true,
     "isDeleted": false,
     "isBusiness": false
   }
