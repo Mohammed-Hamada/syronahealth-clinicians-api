@@ -1,3 +1,4 @@
 import CustomError from './CustomError';
+import generateUniqueCode from './generateUniqueCode';
 
-export default CustomError;
+export { CustomError, generateUniqueCode };
