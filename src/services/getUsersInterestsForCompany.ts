@@ -1,5 +1,5 @@
 import { UserInterest } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersInterestsForCompany = async (

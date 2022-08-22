@@ -15,6 +15,10 @@ const User = sequelize.define('User', {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true,
+    },
   },
   firstName: {
     type: DataTypes.STRING(60),
@@ -39,10 +43,6 @@ const User = sequelize.define('User', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,
-  },
-  isSuperuser: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
   },
   isDeleted: {
     type: DataTypes.BOOLEAN,

@@ -6,6 +6,10 @@ interface UserShape {
    */
   type?: 'add' | 'update';
   /**
+   * @description The id of the company
+   */
+  id?: number;
+  /**
    * The name of the user
    ** It should be added when type is `'add'`
    */
@@ -26,15 +30,6 @@ interface UserShape {
   /**
    * This is the profile picture of the user
    */
-  db?: string;
-  /**
-   * Date of birth for the user
-   */
-  dob?: string | Date;
-  /**
-   * The amount of coins the user has - coins are accumulated by using
-   * the app and can be used for discounts on purchases through the app
-   */
   coins?: number;
   /**
    * Used to indicate whether the account belongs to a Syrona employee
@@ -42,10 +37,6 @@ interface UserShape {
   is_staff?: boolean;
   /**
    * Used to indicate whether the account has superuser permissions
-   */
-  is_superuser?: boolean;
-  /**
-   * Set to `true` if the user deletes the account, default to `false`
    */
   is_deleted?: boolean;
   /**
@@ -60,15 +51,6 @@ interface UserShape {
   /**
    * This is set to `true` when the user agree to Syronahealth terms
    */
-  agree_to_terms?: boolean;
-  /**
-   * This is set to `true` when the user agree to privacy policy for Syronahealth
-   */
-  agree_to_privacy?: boolean;
-  /**
-   * This is set to `true` when the user agree to share his data with Syronahealth team
-   */
-  allow_data_sharing?: boolean;
 }
 
 export default UserShape;

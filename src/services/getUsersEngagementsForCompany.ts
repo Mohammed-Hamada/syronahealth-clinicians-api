@@ -1,5 +1,5 @@
 import { UserEngagement } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersEngagementsForCompany = async (
