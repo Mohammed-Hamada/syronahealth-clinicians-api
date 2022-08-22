@@ -1,5 +1,5 @@
 import { UserInterest } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersInterestsForCompany = async (
@@ -9,40 +9,31 @@ const getUsersInterestsForCompany = async (
   if (!companyData) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }
-  if (companyData.get({ plain: true }).Users.length === 0) {
+  if (!companyData.companyEmployeesCount) {
     return {
       company: {
-        id: companyData?.getDataValue('id'),
-        name: companyData?.getDataValue('name'),
+        id: companyId,
         totalInterests: [],
       },
     };
   }
-
-  let interestsForAllUsers: [] = [];
-  interestsForAllUsers = companyData?.toJSON().Users.map(
-    (user: {
-      UserInterests: Array<{
-        interests: [];
-      }>;
-    }) => {
-      if (!user.UserInterests.length) {
-        return { interests: [] };
-      }
-      return {
-        interests: user.UserInterests[0].interests,
-      };
-    },
-  );
+  let interestsForAllUsers = [];
+  interestsForAllUsers = companyData.companyEmployees.map((user) => {
+    if (!user.UserInterests.length) {
+      return { interests: [] };
+    }
+    return {
+      interests: user.UserInterests[0].interests,
+    };
+  });
 
   const allInterestsArray: string[] = [];
   const interestsCounters: { [key: string]: number } = {};
   if (interestsForAllUsers.length) {
-    interestsForAllUsers.forEach((interestsForOneUser: { interests: [] }) => {
+    interestsForAllUsers.forEach((interestsForOneUser) => {
       allInterestsArray.push(...interestsForOneUser.interests);
     });
   }
-
   allInterestsArray.forEach((interest) => {
     const key = interest.toLowerCase().split(' ').join('_');
 
@@ -74,8 +65,7 @@ const getUsersInterestsForCompany = async (
 
   return {
     company: {
-      id: companyData?.getDataValue('id'),
-      name: companyData?.getDataValue('name'),
+      id: companyId,
       totalInterests,
     },
   };

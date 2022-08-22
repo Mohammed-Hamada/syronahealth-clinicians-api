@@ -6,7 +6,7 @@ interface CompanyShape {
    */
   type?: 'add' | 'update';
   /**
-   * @description The name of the company
+   * @description The id of the company
    */
   id?: number;
   /**

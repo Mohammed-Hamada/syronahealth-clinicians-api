@@ -1,5 +1,5 @@
 import { UserHealthCondition } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersHealthConditionsForCompany = async (
@@ -12,23 +12,19 @@ const getUsersHealthConditionsForCompany = async (
   if (!companyData) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }
-  if (companyData.get({ plain: true }).Users.length === 0) {
+  if (!companyData.companyEmployeesCount) {
     return {
       company: {
-        id: companyData?.getDataValue('id'),
-        name: companyData?.getDataValue('name'),
+        id: companyId,
         totalHealthConditions: [],
+        allHealthConditions: [],
       },
     };
   }
 
-  let healthConditionsForAllUsers: [] = [];
-  healthConditionsForAllUsers = companyData?.toJSON().Users.map(
-    (user: {
-      UserHealthConditions: Array<{
-        healthConditions: [];
-      }>;
-    }) => {
+  let healthConditionsForAllUsers = [];
+  healthConditionsForAllUsers = companyData.companyEmployees.map(
+    (user) => {
       if (!user.UserHealthConditions.length) {
         return { healthConditions: [] };
       }
@@ -42,7 +38,7 @@ const getUsersHealthConditionsForCompany = async (
   const healthConditionsCounters: { [key: string]: number } = {};
   if (healthConditionsForAllUsers.length) {
     healthConditionsForAllUsers.forEach(
-      (healthConditionsForOneUser: { healthConditions: [] }) => {
+      (healthConditionsForOneUser) => {
         allHealthConditionsArray.push(...healthConditionsForOneUser.healthConditions);
       },
     );
@@ -73,8 +69,7 @@ const getUsersHealthConditionsForCompany = async (
 
   return {
     company: {
-      id: companyData?.getDataValue('id'),
-      name: companyData?.getDataValue('name'),
+      id: companyId,
       topThreeHealthConditions,
       allHealthConditions: arr,
     },
