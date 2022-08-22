@@ -12,7 +12,10 @@ const buildDatabase = async (): Promise<void> => {
   }
 };
 
-if (databaseVars.NODE_ENV === 'development') {
+if (
+  databaseVars.NODE_ENV === 'development'
+  || databaseVars.NODE_ENV === 'production'
+) {
   buildDatabase();
   console.log('Database Building: database has been built successfully.');
 }

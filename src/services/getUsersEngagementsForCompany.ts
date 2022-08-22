@@ -1,5 +1,5 @@
 import { UserEngagement } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersEngagementsForCompany = async (
@@ -9,40 +9,31 @@ const getUsersEngagementsForCompany = async (
   if (!companyData) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }
-  if (companyData.get({ plain: true }).Users.length === 0) {
+  if (companyData.companyEmployees.length === 0) {
     return {
       company: {
-        id: companyData?.getDataValue('id'),
-        name: companyData?.getDataValue('name'),
+        id: companyId,
         totalEngagements: [],
       },
     };
   }
 
-  let engagementsForAllUsers: [] = [];
-  engagementsForAllUsers = companyData?.toJSON().Users.map(
-    (user: {
-      UserEngagements: Array<{
-        engagements: [];
-      }>;
-    }) => {
-      if (!user.UserEngagements.length) {
-        return { engagements: [] };
-      }
-      return {
-        engagements: user.UserEngagements[0].engagements,
-      };
-    },
-  );
+  let engagementsForAllUsers = [];
+  engagementsForAllUsers = companyData.companyEmployees.map((user) => {
+    if (!user.UserEngagements.length) {
+      return { engagements: [] };
+    }
+    return {
+      engagements: user.UserEngagements[0].engagements,
+    };
+  });
 
   const allEngagementsArray: string[] = [];
   const engagementsCounters: { [key: string]: number } = {};
   if (engagementsForAllUsers.length) {
-    engagementsForAllUsers.forEach(
-      (engagementsForOneUser: { engagements: [] }) => {
-        allEngagementsArray.push(...engagementsForOneUser.engagements);
-      },
-    );
+    engagementsForAllUsers.forEach((engagementsForOneUser) => {
+      allEngagementsArray.push(...engagementsForOneUser.engagements);
+    });
   }
 
   allEngagementsArray.forEach((engagement) => {
@@ -76,8 +67,7 @@ const getUsersEngagementsForCompany = async (
 
   return {
     company: {
-      id: companyData?.getDataValue('id'),
-      name: companyData?.getDataValue('name'),
+      id: companyId,
       totalEngagements,
     },
   };

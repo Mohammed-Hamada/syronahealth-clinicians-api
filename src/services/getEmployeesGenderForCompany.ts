@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import { Company, Employee, User } from '../database/models';
-import CustomError from '../helpers';
+import { CustomError } from '../helpers';
 
 const getEmployeesGenderForCompany = async (
   companyId: number,
