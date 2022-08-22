@@ -16,6 +16,7 @@ import {
   updateExistingCompany,
   addNewUsers,
   getCompanyByUniqueCode,
+  addNewEmployee,
 } from '../services';
 
 const sendAllCompanies = async (
@@ -76,7 +77,7 @@ const createCompany = async (
       uniqueCode,
       subscriptionType,
     });
-    await addNewCompany(validCompany);
+    const company = await addNewCompany(validCompany);
 
     if (email === undefined) {
       throw new CustomError('No email found', StatusCodes.BAD_REQUEST);
@@ -98,7 +99,11 @@ const createCompany = async (
       isActive: false,
       isBusiness: true,
     }));
-    await addNewUsers(validArrayOfUsers);
+
+    const users: Array<UserShape> = await addNewUsers(validArrayOfUsers);
+    users.forEach(async (user): Promise<void> => {
+      await addNewEmployee(user.id as any, company.id as any);
+    });
 
     return response.json({ message: SuccessMessages.SUCCESS });
   } catch (error) {

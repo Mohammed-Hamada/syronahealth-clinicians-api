@@ -6,6 +6,10 @@ interface UserShape {
    */
   type?: 'add' | 'update';
   /**
+   * @description The id of the company
+   */
+  id?: number;
+  /**
    * The name of the user
    ** It should be added when type is `'add'`
    */
