@@ -18,6 +18,7 @@ const getUsersHealthConditionsForCompany = async (
         id: companyData?.getDataValue('id'),
         name: companyData?.getDataValue('name'),
         totalHealthConditions: [],
+        allHealthConditions: [],
       },
     };
   }
