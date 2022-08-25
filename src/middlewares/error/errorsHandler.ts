@@ -9,7 +9,6 @@ const errorsHandler = (
   response: Response,
   _next: NextFunction,
 ): Response => {
-  console.log({ message, status });
   if (status) {
     return response.status(status).json({ message });
   }

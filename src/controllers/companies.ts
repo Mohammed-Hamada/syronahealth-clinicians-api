@@ -2,12 +2,13 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { ValidationError } from 'sequelize';
 import { SuccessMessages } from '../enums';
-import { CustomError, generateUniqueCode } from '../helpers';
 import {
-  validateCompany,
-  validateEmails,
-  validateParameter,
-} from '../helpers/validation';
+  CustomError,
+  differenceBetweenTwoArrays,
+  generateUniqueCode,
+  splitEmails,
+} from '../helpers';
+import { validateCompany, validateParameter } from '../helpers/validation';
 import { ResponseShape, UserShape } from '../interfaces';
 import {
   getAllCompanies,
@@ -17,7 +18,9 @@ import {
   addNewUsers,
   getCompanyByUniqueCode,
   addNewEmployee,
+  getUserFromMultipleEmails,
 } from '../services';
+import getBusinessEmployeesForCompany from '../services/getBusinessEmployeesForCompany';
 
 const sendAllCompanies = async (
   _request: Request,
@@ -61,7 +64,9 @@ const createCompany = async (
     } = request.body;
 
     let uniqueCode = await generateUniqueCode(6);
+
     let companyByUniqueCode = await getCompanyByUniqueCode(uniqueCode);
+
     while (companyByUniqueCode) {
       // eslint-disable-next-line no-await-in-loop
       uniqueCode = await generateUniqueCode(6);
@@ -77,19 +82,23 @@ const createCompany = async (
       uniqueCode,
       subscriptionType,
     });
-    const company = await addNewCompany(validCompany);
 
-    if (email === undefined) {
-      throw new CustomError('No email found', StatusCodes.BAD_REQUEST);
+    const arrayOfValidEmails = await splitEmails(email);
+
+    const existingUsers = await getUserFromMultipleEmails(arrayOfValidEmails);
+
+    if (existingUsers.length !== 0) {
+      throw new CustomError(
+        existingUsers.length === 1
+          ? `This email address already exists: (${existingUsers[0].email})`
+          : `These emails addresses already exists:  ${existingUsers
+            .map((user) => `(${user.email})`)
+            .join(' ')}`,
+        StatusCodes.BAD_REQUEST,
+      );
     }
-    const emailAddressesSeparatedByComma: string = email
-      .replace(/[, ]+/g, ',')
-      .trim();
 
-    const { emails: validEmails } = await validateEmails({
-      emails: emailAddressesSeparatedByComma,
-    });
-    validArrayOfUsers = validEmails.split(',').map((ele) => ({
+    validArrayOfUsers = arrayOfValidEmails.map((ele) => ({
       email: ele,
       username: 'test',
       firstName: 'test',
@@ -101,8 +110,9 @@ const createCompany = async (
     }));
 
     const users: Array<UserShape> = await addNewUsers(validArrayOfUsers);
+    const company = await addNewCompany(validCompany);
     users.forEach(async (user): Promise<void> => {
-      await addNewEmployee(user.id as any, company.id as any);
+      await addNewEmployee(user.id as number, company.id as number);
     });
 
     return response.json({ message: SuccessMessages.SUCCESS });
@@ -111,22 +121,6 @@ const createCompany = async (
       return next(new CustomError(error.message, StatusCodes.BAD_REQUEST));
     }
     if (error instanceof ValidationError) {
-      if (
-        error.errors[0].type === 'unique violation'
-        && error.errors[0].path === 'email'
-      ) {
-        return next(
-          validArrayOfUsers.length === 1
-            ? new CustomError(
-              'This email address is already being used',
-              StatusCodes.BAD_REQUEST,
-            )
-            : new CustomError(
-              'One or more of the email addresses are already being used',
-              StatusCodes.BAD_REQUEST,
-            ),
-        );
-      }
       return next(
         new CustomError(error.errors[0].message, StatusCodes.BAD_REQUEST),
       );
@@ -137,7 +131,6 @@ const createCompany = async (
 
 const updateCompany = async (
   request: Request,
-
   response: Response,
   next: NextFunction,
 ): Promise<Response<ResponseShape> | unknown> => {
@@ -149,20 +142,28 @@ const updateCompany = async (
       request.params as { id: number | string },
     );
     const {
-      allowedEmployees, coins, name, uniqueCode, subscriptionType,
+      allowedEmployees, coins, name, subscriptionType, email,
     } = request.body;
 
-    const company = await validateCompany({
+    const businessEmployees = await getBusinessEmployeesForCompany(+id);
+
+    const arrayOfValidEmails = await splitEmails(email);
+    const emailsToUpdate = await differenceBetweenTwoArrays(
+      businessEmployees.map((e) => e.email) as [],
+      arrayOfValidEmails as [],
+    );
+    console.log('emailsToUpdate: ', emailsToUpdate);
+
+    const validCompany = await validateCompany({
       type: 'update',
       allowedEmployees,
       coins,
       name,
-      uniqueCode,
       subscriptionType,
     });
 
-    const updateResult = await updateExistingCompany(company, +id);
-    if (!updateResult) {
+    const isThereCompany = !!(await getCompanyById(+id));
+    if (!isThereCompany) {
       return next(
         new CustomError(
           `There is no company with id ${id}`,
@@ -170,9 +171,10 @@ const updateCompany = async (
         ),
       );
     }
+
+    await updateExistingCompany(validCompany, +id);
     return response.json({ message: SuccessMessages.SUCCESS });
   } catch (error) {
-    console.log(error);
     if (error instanceof Error) {
       if (error.name === 'ValidationError') {
         return next(new CustomError(error.message, StatusCodes.BAD_REQUEST));
