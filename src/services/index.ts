@@ -5,7 +5,7 @@ import getAllCompanies from './getAllCompanies';
 import getCompanyById from './getCompanyById';
 import getCompanyByUniqueCode from './getCompanyByUniqueCode';
 import getEmployeesGenderForCompany from './getEmployeesGenderForCompany';
-import getUserByEmail from './getUserByEmail';
+import getUserFromMultipleEmails from './getUserFromMultipleEmails';
 import getUsersEngagementsForCompany from './getUsersEngagementsForCompany';
 import getUsersHealthConditionsForCompany from './getUsersHealthConditionsForCompany';
 import getUsersInterestsForCompany from './getUsersInterestsForCompany';
@@ -25,5 +25,5 @@ export {
   updateExistingCompany,
   addNewUsers,
   addNewEmployee,
-  getUserByEmail,
+  getUserFromMultipleEmails,
 };
