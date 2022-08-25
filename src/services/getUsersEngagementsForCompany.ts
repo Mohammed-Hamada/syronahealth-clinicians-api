@@ -6,10 +6,10 @@ const getUsersEngagementsForCompany = async (
   companyId: number,
 ): Promise<object | string> => {
   const companyData = await getUsersStatesFromModel(companyId, UserEngagement);
-  if (!companyData) {
+  if (companyData.companyEmployeesCount === undefined) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }
-  if (companyData.companyEmployees.length === 0) {
+  if (companyData.companyEmployeesCount === 0) {
     return {
       company: {
         id: companyId,
