@@ -1,5 +1,6 @@
 import addNewCompany from './addNewCompany';
 import addNewEmployee from './addNewEmployee';
+import addNewEmployees from './addNewEmployees';
 import addNewUsers from './addNewUsers';
 import getAllCompanies from './getAllCompanies';
 import getCompanyById from './getCompanyById';
@@ -26,4 +27,5 @@ export {
   addNewUsers,
   addNewEmployee,
   getUserFromMultipleEmails,
+  addNewEmployees,
 };

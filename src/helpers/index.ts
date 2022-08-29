@@ -1,4 +1,5 @@
 import CustomError from './CustomError';
+import deleteFile from './deleteFile';
 import differenceBetweenTwoArrays from './differenceBetweenTwoArrays';
 import generateUniqueCode from './generateUniqueCode';
 import splitEmails from './splitEmails';
@@ -8,4 +9,5 @@ export {
   generateUniqueCode,
   splitEmails,
   differenceBetweenTwoArrays,
+  deleteFile,
 };

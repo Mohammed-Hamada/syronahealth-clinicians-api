@@ -33,6 +33,8 @@ const User = sequelize.define('User', {
   },
   coins: {
     type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
   },
   isActive: {
     type: DataTypes.BOOLEAN,
@@ -50,6 +52,8 @@ const User = sequelize.define('User', {
   },
   isBusiness: {
     type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
   },
 });
 
