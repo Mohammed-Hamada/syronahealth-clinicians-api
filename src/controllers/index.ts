@@ -3,8 +3,9 @@ import {
   sendAllCompanies,
   sendCompanyById,
   updateCompany,
-} from './companies';
+} from './company/companies';
 import sendEmployeesGenderForCompany from './employeesGender';
+import createUsers from './user';
 import sendUsersEngagementsForCompany from './userEngagements';
 import sendUsersHealthConditionsForCompany from './userHealthConditions';
 import sendUsersInterestsForCompany from './userInterests';
@@ -18,4 +19,5 @@ export {
   sendUsersHealthConditionsForCompany,
   createCompany,
   updateCompany,
+  createUsers,
 };

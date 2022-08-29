@@ -1,15 +1,15 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { ValidationError } from 'sequelize';
-import { SuccessMessages } from '../enums';
+import { SuccessMessages } from '../../enums';
 import {
   CustomError,
   differenceBetweenTwoArrays,
   generateUniqueCode,
   splitEmails,
-} from '../helpers';
-import { validateCompany, validateParameter } from '../helpers/validation';
-import { ResponseShape, UserShape } from '../interfaces';
+} from '../../helpers';
+import { validateCompany, validateParameter } from '../../helpers/validation';
+import { ResponseShape, UserShape } from '../../interfaces';
 import {
   getAllCompanies,
   getCompanyById,
@@ -19,8 +19,8 @@ import {
   getCompanyByUniqueCode,
   addNewEmployee,
   getUserFromMultipleEmails,
-} from '../services';
-import getBusinessEmployeesForCompany from '../services/getBusinessEmployeesForCompany';
+} from '../../services';
+import getBusinessEmployeesForCompany from '../../services/getBusinessEmployeesForCompany';
 
 const sendAllCompanies = async (
   _request: Request,
@@ -162,15 +162,7 @@ const updateCompany = async (
       subscriptionType,
     });
 
-    const isThereCompany = !!(await getCompanyById(+id));
-    if (!isThereCompany) {
-      return next(
-        new CustomError(
-          `There is no company with id ${id}`,
-          StatusCodes.BAD_REQUEST,
-        ),
-      );
-    }
+    await getCompanyById(+id);
 
     await updateExistingCompany(validCompany, +id);
     return response.json({ message: SuccessMessages.SUCCESS });
