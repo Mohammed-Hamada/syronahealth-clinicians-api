@@ -4,13 +4,18 @@ import { ErrorsMessages } from '../../enums';
 import { ClientErrors } from '../../interfaces';
 
 const errorsHandler = (
-  { message, status }: ClientErrors,
+  { message, status, name }: ClientErrors,
   _request: Request,
   response: Response,
   _next: NextFunction,
 ): Response => {
   if (status) {
     return response.status(status).json({ message });
+  }
+  if (!status && name === 'Error' && message.includes('File does not exist.')) {
+    return response.status(StatusCodes.BAD_REQUEST).json({
+      message: 'The file should be a csv file.',
+    });
   }
   return response
     .status(StatusCodes.INTERNAL_SERVER_ERROR)

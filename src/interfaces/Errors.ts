@@ -13,7 +13,7 @@ type ClientErrorsStatus =
   | 409
   | 410
   | 429;
-interface ClientErrors {
+interface ClientErrors extends Error {
   message: string;
   status: ClientErrorsStatus;
 }
