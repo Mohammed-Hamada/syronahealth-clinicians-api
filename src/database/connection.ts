@@ -9,7 +9,10 @@ const sequelize = new Sequelize(databaseVars.DATABASE_URL, {
     updatedAt: 'updated',
   },
   dialectOptions: {
-    ssl: databaseVars.NODE_ENV === 'production',
+    ssl:
+      process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
   },
   pool: {
     max: 5,
