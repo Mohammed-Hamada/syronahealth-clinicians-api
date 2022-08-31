@@ -1,5 +1,8 @@
-import authVars from './auth';
-import databaseVars from './database';
-import serverVars from './server';
+import {
+  authVars, awsVars, databaseVars, serverVars,
+} from './env';
+import { s3Storage, diskStorage } from './storages';
 
-export { databaseVars, serverVars, authVars };
+export {
+  databaseVars, serverVars, authVars, awsVars, s3Storage, diskStorage,
+};

@@ -4,7 +4,9 @@ import { ErrorsMessages } from '../../enums';
 import { ClientErrors } from '../../interfaces';
 
 const errorsHandler = (
-  { message, status, name }: ClientErrors,
+  {
+    message, status, name, stack,
+  }: ClientErrors,
   _request: Request,
   response: Response,
   _next: NextFunction,
