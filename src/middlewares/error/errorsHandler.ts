@@ -5,7 +5,7 @@ import { ClientErrors } from '../../interfaces';
 
 const errorsHandler = (
   {
-    message, status, name, stack,
+    message, status, name,
   }: ClientErrors,
   _request: Request,
   response: Response,
