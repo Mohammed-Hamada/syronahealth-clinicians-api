@@ -11,10 +11,6 @@ const errorsHandler = (
   response: Response,
   _next: NextFunction,
 ): Response => {
-  console.log('name: ', name);
-  console.log('message: ', message);
-  console.log('stack: ', stack);
-
   if (status) {
     return response.status(status).json({ message });
   }
