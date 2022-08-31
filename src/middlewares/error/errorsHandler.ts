@@ -4,11 +4,17 @@ import { ErrorsMessages } from '../../enums';
 import { ClientErrors } from '../../interfaces';
 
 const errorsHandler = (
-  { message, status, name }: ClientErrors,
+  {
+    message, status, name, stack,
+  }: ClientErrors,
   _request: Request,
   response: Response,
   _next: NextFunction,
 ): Response => {
+  console.log('name: ', name);
+  console.log('message: ', message);
+  console.log('stack: ', stack);
+
   if (status) {
     return response.status(status).json({ message });
   }

@@ -35,8 +35,10 @@
   },
   "homepage": "https://github.com/Mohammed-Hamada/syronahealth-clinicians-api#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.160.0",
     "@types/express-serve-static-core": "^4.17.30",
     "@types/multer": "^1.4.7",
+    "@types/multer-s3": "^3.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "compression": "^1.7.4",
@@ -51,6 +53,7 @@
     "joi": "^17.6.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
     "pg": "^8.7.3",
     "qs": "^6.11.0",
     "sequelize": "^6.21.2",
