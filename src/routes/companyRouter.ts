@@ -1,6 +1,5 @@
-import path from 'path';
-import { Request, Router } from 'express';
-import multer from 'multer';
+import { Router } from 'express';
+import { serverVars } from '../config';
 import {
   createCompany,
   createUsers,
@@ -12,44 +11,19 @@ import {
   sendUsersInterestsForCompany,
   updateCompany,
 } from '../controllers';
-import { serverVars } from '../config';
-
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (_request: Request, _file: Express.Multer.File, callBack) => {
-      callBack(
-        null,
-        serverVars.NODE_ENV === 'production'
-          ? './uploads/'
-          : './uploads-development',
-      );
-    },
-    filename: (request: Request, file: Express.Multer.File, callBack) => {
-      callBack(
-        null,
-        `company-${request.params.id}-${
-          file.fieldname
-        }-${Date.now()}${path.extname(file.originalname)}`,
-      );
-    },
-  }),
-  fileFilter: (_request: Request, file: Express.Multer.File, cb) => {
-    // eslint-disable-next-line no-unused-expressions
-    if (file.mimetype === 'text/csv') {
-      cb(null, true);
-    } else {
-      cb(null, false);
-    }
-  },
-  limits: {
-    fileSize: 50 * 1024 * 1024,
-  },
-});
+import { uploadToDisk, uploadToS3 } from '../middlewares';
 
 const companyRouter = Router();
 companyRouter.route('/').get(sendAllCompanies).post(createCompany);
 companyRouter.route('/:id').get(sendCompanyById).patch(updateCompany);
-companyRouter.route('/:id/users').post(upload.single('users'), createUsers);
+companyRouter
+  .route('/:id/users')
+  .post(
+    serverVars.NODE_ENV === 'production'
+      ? uploadToS3.single('users')
+      : uploadToDisk.single('users'),
+    createUsers,
+  );
 companyRouter.get('/:id/users-engagements', sendUsersEngagementsForCompany);
 companyRouter.get('/:id/users-interests', sendUsersInterestsForCompany);
 companyRouter.get(

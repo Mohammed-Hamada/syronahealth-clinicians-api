@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import CSVtoJSON from 'csvtojson';
 import { StatusCodes } from 'http-status-codes';
+import { Readable } from 'stream';
 import { SuccessMessages } from '../../enums';
 import { ResponseShape, UserShape } from '../../interfaces';
 import {
@@ -10,6 +11,8 @@ import {
   getUserFromMultipleEmails,
 } from '../../services';
 import { deleteFile } from '../../helpers';
+import { awsVars, serverVars } from '../../config';
+import awsS3 from '../../services/aws';
 
 const createUsers = async (
   request: Request,
@@ -20,13 +23,32 @@ const createUsers = async (
     file,
     params: { id },
   } = request;
-
   try {
     await getCompanyById(+id);
 
-    const arrayOfUsers: Array<UserShape> = await CSVtoJSON().fromFile(
-      file?.path as string,
-    );
+    let arrayOfUsers: Array<UserShape> = [];
+    if (serverVars.NODE_ENV === 'production') {
+      const fileKey = await awsS3.listObjects({
+        Bucket: awsVars.AWS_SYRONAHEALTH_UPLOAD_BUCKET,
+      });
+      const params = {
+        Bucket: awsVars.AWS_SYRONAHEALTH_UPLOAD_BUCKET,
+        Key:
+          fileKey?.Contents
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          && fileKey?.Contents[fileKey.Contents?.length - 1].Key,
+      };
+
+      const objectResponse = await awsS3.getObject(params);
+
+      const stream = objectResponse.Body;
+
+      if (stream instanceof Readable) {
+        arrayOfUsers = await CSVtoJSON().fromStream(stream);
+      }
+    } else {
+      arrayOfUsers = await CSVtoJSON().fromFile(file?.path as string);
+    }
 
     const arrayOfEmails: Array<string> = arrayOfUsers.map(
       (user) => user.email as string,
@@ -35,7 +57,9 @@ const createUsers = async (
     const existingUsers = await getUserFromMultipleEmails(arrayOfEmails);
 
     if (existingUsers.length !== 0) {
-      await deleteFile(file?.filename as string);
+      await deleteFile(
+        serverVars.NODE_ENV === 'development' ? (file?.filename as string) : '',
+      );
 
       return response.status(StatusCodes.BAD_REQUEST).json({
         status: 'Uploading unsuccessful',
@@ -63,7 +87,9 @@ const createUsers = async (
       users: arrayOfUsers.length,
     });
   } catch (error) {
-    await deleteFile(file?.filename as string);
+    await deleteFile(
+      serverVars.NODE_ENV === 'development' ? (file?.filename as string) : '',
+    );
     return next(error);
   }
 };
