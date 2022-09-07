@@ -1,1 +1,0 @@
-# syronahealth-clinicians-api
