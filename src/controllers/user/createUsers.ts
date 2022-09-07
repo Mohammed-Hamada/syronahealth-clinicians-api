@@ -10,7 +10,7 @@ import {
   getCompanyById,
   getUserFromMultipleEmails,
 } from '../../services';
-import { deleteFile } from '../../helpers';
+import { CustomError, deleteFile } from '../../helpers';
 import { awsVars, serverVars } from '../../config';
 import awsS3 from '../../services/aws';
 
@@ -25,7 +25,6 @@ const createUsers = async (
   } = request;
   try {
     await getCompanyById(+id);
-
     let arrayOfUsers: Array<UserShape> = [];
     if (serverVars.NODE_ENV === 'production') {
       const fileKey = await awsS3.listObjects({
@@ -39,8 +38,11 @@ const createUsers = async (
           && fileKey?.Contents[fileKey.Contents?.length - 1].Key,
       };
 
-      const objectResponse = await awsS3.getObject(params);
+      if (!params.Key) {
+        throw new CustomError('Please enter a csv file', StatusCodes.BAD_REQUEST);
+      }
 
+      const objectResponse = await awsS3.getObject(params);
       const stream = objectResponse.Body;
 
       if (stream instanceof Readable) {

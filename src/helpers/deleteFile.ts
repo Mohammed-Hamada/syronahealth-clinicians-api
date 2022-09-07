@@ -4,6 +4,7 @@ import { awsVars, serverVars } from '../config';
 import awsS3 from '../services/aws';
 
 const deleteFile = async (fileName: string): Promise<void> => {
+  if (!fileName) return;
   const fileKey = await awsS3.listObjects({
     Bucket: awsVars.AWS_SYRONAHEALTH_UPLOAD_BUCKET,
   });
