@@ -8,36 +8,32 @@ config({
   path: resolve(process.cwd(), `.env.${NODE_ENV}`),
 });
 
-const ISSUER_BASE_URL = process.env.ISSUER_BASE_URL as string;
-const CLIENT_ID = process.env.CLIENT_ID as string;
-const BASE_URL = process.env.BASE_URL as string;
+const JWKS_URI = process.env.JWKS_URI as string;
+const ISSUER = process.env.ISSUER as string;
 const SECRET_KEY = process.env.SECRET_KEY as string;
 
 const authSchema = joi.object().keys({
   NODE_ENV: joi.string().valid('development', 'test', 'production').required(),
   SECRET_KEY: joi.string().required(),
-  ISSUER_BASE_URL: joi.string().required(),
-  CLIENT_ID: joi.string().required(),
-  BASE_URL: joi.string().required(),
+  JWKS_URI: joi.string().required(),
+  ISSUER: joi.string().required(),
 });
 
 const authVars = (): {
   NODE_ENV: string;
-  ISSUER_BASE_URL: string;
-  CLIENT_ID: string;
-  BASE_URL: string;
   SECRET_KEY: string;
+  JWKS_URI: string;
+  ISSUER: string;
 } => {
   const { value, error } = authSchema.validate({
     NODE_ENV,
-    ISSUER_BASE_URL,
-    CLIENT_ID,
-    BASE_URL,
+    JWKS_URI,
     SECRET_KEY,
+    ISSUER,
   });
   if (error) {
     throw new Error(
-      'Missing: ISSUER_BASE_URL or CLIENT_ID or BASE_URL or SECRET_KEY',
+      'Missing: JWKS_URI or SECRET_KEY or ISSUER',
     );
   }
   return value;
