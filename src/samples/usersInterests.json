@@ -1,0 +1,103 @@
+[
+  {
+    "user": 10,
+    "interests": [
+      "Mental Health",
+      "Health Screening",
+      "Fertility",
+      "Wellbeing",
+      "Urological Health",
+      "Testicular Health"
+    ]
+  },
+  {
+    "user": 9,
+    "interests": [
+      "Mental Health",
+      "Health Screening",
+      "Diet & Nutrition",
+      "New parent Support",
+      "Wellbeing",
+      "Cancer",
+      "Endo",
+      "PCOS",
+      "Menstrual Health",
+      "Pregnancy",
+      "Sexual Health",
+      "Urological Health"
+    ]
+  },
+  {
+    "user": 6,
+    "interests": [
+      "New parent Support",
+      "Fertility",
+      "Health Advice",
+      "Wellbeing",
+      "Cardiac Health",
+      "Menopause",
+      "Endo",
+      "Sexual Health",
+      "Urological Health"
+    ]
+  },
+  {
+    "user": 2,
+    "interests": [
+      "Health Advice",
+      "Cancer",
+      "Wellbeing",
+      "Hair & Skin",
+      "Menopause",
+      "Endo",
+      "Cardiac Health",
+      "PCOS",
+      "Pregnancy",
+      "Uterine Fibroids",
+      "Menstrual Health"
+    ]
+  },
+  {
+    "user": 5,
+    "interests": [
+      "Urological Health",
+      "Health Screening",
+      "Diet & Nutrition",
+      "Menstrual Health",
+      "Uterine Fibroids",
+      "Pregnancy",
+      "Mental Health",
+      "Sexual Health",
+      "Testicular Health"
+    ]
+  },
+  {
+    "user": 8,
+    "interests": [
+      "Diet & Nutrition",
+      "Health Screening",
+      "Fertility",
+      "Wellbeing",
+      "Mental Health",
+      "Cancer",
+      "Hair & Skin",
+      "Pregnancy"
+    ]
+  },
+  {
+    "user": 7,
+    "interests": ["Testicular Health"]
+  },
+  {
+    "user": 4,
+    "interests": ["Mental Health", "Diet & Nutrition"]
+  },
+  {
+    "user": 1,
+    "interests": ["Pregnancy", "Sexual Health"]
+  },
+  {
+    "user": 3,
+    "interests": ["Endo", "PCOS", "Urological Health", "Testicular Health"]
+  }
+]
