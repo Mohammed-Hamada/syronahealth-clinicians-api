@@ -5,7 +5,7 @@ import { CompanyShape } from '../../interfaces';
  * @param {CompanyShape} object This is company object to validate
  * @returns {Promise<object>} Promise object represents the valid object
  */
-const validateCompany = (object: CompanyShape): Promise<CompanyShape> => {
+const validateCompany = (object: Partial<CompanyShape>): Promise<Partial<CompanyShape>> => {
   const companySchema: joi.ObjectSchema<string | boolean | number | Date> = joi
     .object()
     .keys({
@@ -25,11 +25,7 @@ const validateCompany = (object: CompanyShape): Promise<CompanyShape> => {
         then: joi.string().valid('1', '2').required(),
         otherwise: joi.string(),
       }),
-      allowedEmployees: joi.when('type', {
-        is: 'add',
-        then: joi.number().integer().min(1).required(),
-        otherwise: joi.number().integer(),
-      }),
+      allowedEmployees: joi.number().integer(),
       coins: joi.when('type', {
         is: 'add',
         then: joi.number().integer().default(0).min(0),

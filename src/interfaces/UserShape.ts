@@ -8,46 +8,46 @@ interface UserShape {
   /**
    * @description The id of the company
    */
-  id?: number;
+  id: number;
   /**
    * The name of the user
    ** It should be added when type is `'add'`
    */
-  username?: string;
+  username: string;
   /**
    * The email of the user
    ** It should be added when type is `'add'`
    */
-  email?: string;
+  email: string;
   /**
    ** It should be added when type is `'add'`
    */
-  first_name?: string;
+  first_name: string;
   /**
    ** It should be added when type is `'add'`
    */
-  last_name?: string;
+  last_name: string;
   /**
    * This is the profile picture of the user
    */
-  coins?: number;
+  coins: number;
   /**
    * Used to indicate whether the account belongs to a Syrona employee
    */
-  is_staff?: boolean;
+  is_staff: boolean;
   /**
    * Used to indicate whether the account has superuser permissions
    */
-  is_deleted?: boolean;
+  is_deleted: boolean;
   /**
    * This is set to `true` when the user completes registration,
    * and set to `false` if the user deletes the account
    */
-  is_active?: boolean;
+  is_active: boolean;
   /**
    * Used to indicate whether the account is a corporate one
    */
-  is_business?: boolean;
+  is_business: boolean;
   /**
    * This is set to `true` when the user agree to Syronahealth terms
    */

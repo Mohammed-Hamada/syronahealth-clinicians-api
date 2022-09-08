@@ -3,7 +3,7 @@ import {
   sendAllCompanies,
   sendCompanyById,
   updateCompany,
-} from './company/companies';
+} from './company';
 import sendEmployeesGenderForCompany from './employeesGender';
 import createUsers from './user';
 import sendUsersEngagementsForCompany from './userEngagements';

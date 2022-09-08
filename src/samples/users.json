@@ -2398,5 +2398,17 @@
     "isStaff": true,
     "isDeleted": false,
     "isBusiness": false
+  },
+  {
+    "username": "test user",
+    "email": "test@gmail.com",
+    "firstName": "Mohammed",
+    "lastName": "Hamada",
+    "gender": "Male",
+    "coins": 577,
+    "isActive": true,
+    "isStaff": false,
+    "isDeleted": false,
+    "isBusiness": false
   }
 ]
