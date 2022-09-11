@@ -11,17 +11,23 @@ import {
   sendUsersInterestsForCompany,
   updateCompany,
 } from '../controllers';
-import { uploadToDisk, uploadToS3 } from '../middlewares';
+import {
+  superAdminCheck,
+  uploadToDisk,
+  uploadToS3,
+} from '../middlewares';
 
 const companyRouter = Router();
-companyRouter.route('/').get(sendAllCompanies).post(createCompany);
+
+companyRouter
+  .route('/')
+  .get(superAdminCheck, sendAllCompanies)
+  .post(createCompany);
 companyRouter.route('/:id').get(sendCompanyById).patch(updateCompany);
 companyRouter
   .route('/:id/users')
   .post(
-    serverVars.NODE_ENV === 'production'
-      ? uploadToS3.single('users')
-      : uploadToDisk.single('users'),
+    serverVars.NODE_ENV === 'production' ? uploadToS3 : uploadToDisk,
     createUsers,
   );
 companyRouter.get('/:id/users-engagements', sendUsersEngagementsForCompany);
