@@ -8,32 +8,32 @@ config({
   path: resolve(process.cwd(), `.env.${NODE_ENV}`),
 });
 
-const JWKS_URI = process.env.JWKS_URI as string;
-const ISSUER = process.env.ISSUER as string;
 const SECRET_KEY = process.env.SECRET_KEY as string;
+const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN as string;
+const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE as string;
 
 const authSchema = joi.object().keys({
   NODE_ENV: joi.string().valid('development', 'test', 'production').required(),
   SECRET_KEY: joi.string().required(),
-  JWKS_URI: joi.string().required(),
-  ISSUER: joi.string().required(),
+  AUTH0_DOMAIN: joi.string().required(),
+  AUTH0_AUDIENCE: joi.string().required(),
 });
 
 const authVars = (): {
   NODE_ENV: string;
   SECRET_KEY: string;
-  JWKS_URI: string;
-  ISSUER: string;
+  AUTH0_DOMAIN: string;
+  AUTH0_AUDIENCE: string;
 } => {
   const { value, error } = authSchema.validate({
     NODE_ENV,
-    JWKS_URI,
     SECRET_KEY,
-    ISSUER,
+    AUTH0_DOMAIN,
+    AUTH0_AUDIENCE,
   });
   if (error) {
     throw new Error(
-      'Missing: JWKS_URI or SECRET_KEY or ISSUER',
+      'Missing: AUTH0_DOMAIN or AUTH0_AUDIENCE',
     );
   }
   return value;

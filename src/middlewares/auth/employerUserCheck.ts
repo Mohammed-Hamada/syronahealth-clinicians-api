@@ -1,5 +1,5 @@
-import jwtAuthz from 'express-jwt-authz';
+import jwtAuthzCheck from './jwtAuthz';
 
-const employerUserCheck = jwtAuthz([], { customScopeKey: 'permissions' });
+const employerUserCheck = jwtAuthzCheck(['']);
 
 export default employerUserCheck;

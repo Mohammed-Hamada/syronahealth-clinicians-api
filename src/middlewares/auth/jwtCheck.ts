@@ -6,11 +6,11 @@ const jwtCheck = expressjwt({
   secret: jwks.expressJwtSecret({
     cache: false,
     rateLimit: true,
-    jwksUri: authVars.JWKS_URI,
+    jwksUri: `https://${authVars.AUTH0_DOMAIN}/.well-known/jwks.json`,
   }) as GetVerificationKey,
   algorithms: ['RS256'],
-  issuer: authVars.ISSUER,
-  audience: 'http://localhost:4000',
+  issuer: `https://${authVars.AUTH0_DOMAIN}/`,
+  audience: authVars.AUTH0_AUDIENCE,
 });
 
 export default jwtCheck;
