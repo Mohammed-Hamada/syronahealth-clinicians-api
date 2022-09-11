@@ -12,6 +12,9 @@ import getUsersHealthConditionsForCompany from './getUsersHealthConditionsForCom
 import getUsersInterestsForCompany from './getUsersInterestsForCompany';
 import getUsersStatesFromModel from './getUsersStatesFromModel';
 import updateExistingCompany from './updateExistingCompany';
+import getUsersInCompanies from './getUsersInCompanies';
+import updateUsers from './updateUsers';
+import getBusinessEmployeesForCompany from './getBusinessEmployeesForCompany';
 
 export {
   getAllCompanies,
@@ -28,4 +31,7 @@ export {
   addNewEmployee,
   getUserFromMultipleEmails,
   addNewEmployees,
+  getUsersInCompanies,
+  updateUsers,
+  getBusinessEmployeesForCompany,
 };

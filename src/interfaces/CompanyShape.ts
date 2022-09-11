@@ -8,30 +8,30 @@ interface CompanyShape {
   /**
    * @description The id of the company
    */
-  id?: number;
+  id: number;
   /**
    * @description The name of the company
    * @type {string}
    */
-  name?: string;
+  name: string;
   /**
    * @description Unique code for the company
    */
-  uniqueCode?: string;
+  uniqueCode: string;
   /**
    * @description How much employees can company accepts
    */
-  allowedEmployees?: number | null;
-  coins?: number;
+  allowedEmployees: number | null;
+  coins: number;
   /**
    * @description How much employees are currently working in the company
    * @type {number}
    * @default 0
    */
-  registeredEmployees?: number;
-  subscriptionType?:'1' | '2';
-  timestamp?: Date;
-  updated?: Date;
+  registeredEmployees: number;
+  subscriptionType:'1' | '2';
+  timestamp: Date;
+  updated: Date;
 }
 
 export default CompanyShape;
