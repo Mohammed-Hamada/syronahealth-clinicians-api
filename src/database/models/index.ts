@@ -1,4 +1,6 @@
 import sequelize from '../connection';
+import Auth0Company from './Auth0Company';
+import Auth0User from './Auth0User';
 import Company from './Company';
 import Employee from './Employee';
 import User from './User';
@@ -14,6 +16,11 @@ import UserInterest from './UserInterest';
     UserEngagement.belongsTo(User, { foreignKey: 'user' });
     UserHealthCondition.belongsTo(User, { foreignKey: 'user' });
     UserInterest.belongsTo(User, { foreignKey: 'user' });
+
+    User.hasOne(Auth0User, { foreignKey: 'user' });
+    Auth0User.belongsTo(User, { foreignKey: 'user' });
+    Company.hasOne(Auth0Company, { foreignKey: 'corporate' });
+    Auth0Company.belongsTo(Company, { foreignKey: 'corporate' });
 
     User.belongsToMany(Company, { through: Employee, foreignKey: 'user' });
     Company.belongsToMany(User, {
