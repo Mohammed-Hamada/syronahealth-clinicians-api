@@ -12,6 +12,7 @@ import {
   updateCompany,
 } from '../controllers';
 import {
+  employerUserCheck,
   superAdminCheck,
   uploadToDisk,
   uploadToS3,
@@ -20,22 +21,19 @@ import {
 const companyRouter = Router();
 
 companyRouter
-  .route('/')
-  .get(superAdminCheck, sendAllCompanies)
-  .post(createCompany);
+  .use(employerUserCheck)
+  .get('/:id/users-engagements', sendUsersEngagementsForCompany)
+  .get('/:id/users-interests', sendUsersInterestsForCompany)
+  .get('/:id/users-health-conditions', sendUsersHealthConditionsForCompany)
+  .get('/:id/employees-gender', sendEmployeesGenderForCompany);
+
+companyRouter.use(superAdminCheck);
+companyRouter.route('/').get(sendAllCompanies).post(createCompany);
 companyRouter.route('/:id').get(sendCompanyById).patch(updateCompany);
-companyRouter
-  .route('/:id/users')
-  .post(
-    serverVars.NODE_ENV === 'production' ? uploadToS3 : uploadToDisk,
-    createUsers,
-  );
-companyRouter.get('/:id/users-engagements', sendUsersEngagementsForCompany);
-companyRouter.get('/:id/users-interests', sendUsersInterestsForCompany);
-companyRouter.get(
-  '/:id/users-health-conditions',
-  sendUsersHealthConditionsForCompany,
+companyRouter.post(
+  '/:id/users',
+  serverVars.NODE_ENV === 'production' ? uploadToS3 : uploadToDisk,
+  createUsers,
 );
-companyRouter.get('/:id/employees-gender', sendEmployeesGenderForCompany);
 
 export default companyRouter;

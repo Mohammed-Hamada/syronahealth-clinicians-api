@@ -14,7 +14,7 @@ describe('Test Server Config file', () => {
     process.env.NODE_ENV = 'test';
     expect(serverVars).toMatchObject({
       NODE_ENV: 'test',
-      PORT: '3000',
+      PORT: '5000',
     });
   });
 });
