@@ -3,7 +3,6 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import axios from 'axios';
 import { notFoundHandler, errorsHandler, jwtCheck } from './middlewares';
 import router from './routes';
 
