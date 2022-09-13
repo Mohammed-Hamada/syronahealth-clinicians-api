@@ -4,7 +4,7 @@ import { authVars } from '../../config';
 
 const jwtCheck = expressjwt({
   secret: jwks.expressJwtSecret({
-    cache: false,
+    cache: true,
     rateLimit: true,
     jwksUri: `https://${authVars.AUTH0_DOMAIN}/.well-known/jwks.json`,
   }) as GetVerificationKey,
