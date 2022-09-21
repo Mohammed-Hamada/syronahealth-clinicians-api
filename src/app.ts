@@ -3,7 +3,12 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import { notFoundHandler, errorsHandler, jwtCheck } from './middlewares';
+import {
+  notFoundHandler,
+  errorsHandler,
+  jwtCheck,
+  checkEmailExistence,
+} from './middlewares';
 import router from './routes';
 
 const app: Express = express();
@@ -18,6 +23,7 @@ app.use([
     skip: () => process.env.NODE_ENV === 'production',
   }),
   jwtCheck,
+  checkEmailExistence,
 ]);
 
 app.use('/api/v1', router);

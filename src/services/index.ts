@@ -15,6 +15,7 @@ import updateExistingCompany from './updateExistingCompany';
 import getUsersInCompanies from './getUsersInCompanies';
 import updateUsers from './updateUsers';
 import getBusinessEmployeesForCompany from './getBusinessEmployeesForCompany';
+import getUserByEmail from './getUserByEmail';
 
 export {
   getAllCompanies,
@@ -34,4 +35,5 @@ export {
   getUsersInCompanies,
   updateUsers,
   getBusinessEmployeesForCompany,
+  getUserByEmail,
 };
