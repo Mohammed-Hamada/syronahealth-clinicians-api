@@ -1,16 +1,30 @@
 import { NextFunction, Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
+import { CustomError } from '../../helpers';
 import { getUserByEmail } from '../../services';
+// import { getUserByEmail } from '../../services';
 
 const checkEmailExistence = async (
-  request: Request | any,
+  _request: Request,
   response: Response,
-  _next: NextFunction,
+  next: NextFunction,
 ): Promise<void> => {
-  console.log('request.auth: ', request.auth);
+  try {
+    const { userEmail } = response.locals;
+    const user = await getUserByEmail(userEmail);
 
-  const email = await getUserByEmail(request.auth.email);
-  console.log('email: ', email);
-  response.json('hello');
+    if (!user) {
+      throw new CustomError(
+        "Your email doesn't exists in our database",
+        StatusCodes.BAD_REQUEST,
+      );
+    } else {
+      response.locals.user = user;
+      next();
+    }
+  } catch (error) {
+    next(error);
+  }
 };
 
 export default checkEmailExistence;

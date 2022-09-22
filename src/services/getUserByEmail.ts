@@ -6,6 +6,9 @@ const getUserByEmail = async (email: string): Promise<UserShape> => {
     where: {
       email,
     },
+    attributes: {
+      exclude: ['gender', 'coins', 'timestamp', 'updated'],
+    },
   });
   return user?.toJSON() as UserShape;
 };
