@@ -16,9 +16,6 @@ const deleteFile = async (fileName: string): Promise<void> => {
       // eslint-disable-next-line no-unsafe-optional-chaining
       && fileKey?.Contents[fileKey.Contents?.length - 1].Key,
     });
-    console.log(fileKey?.Contents
-      // eslint-disable-next-line no-unsafe-optional-chaining
-      && fileKey?.Contents[fileKey.Contents?.length - 1].Key);
   } else {
     await fs.promises.unlink(
       join(

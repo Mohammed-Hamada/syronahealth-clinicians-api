@@ -67,10 +67,8 @@ function onListening(): void {
       );
     });
   } catch (error) {
-    console.error(
-      `Unable to connect to the database: 
-      ${error}`,
-    );
+    throw new Error(`Unable to connect to the database: 
+    ${error}`);
   }
 })();
 

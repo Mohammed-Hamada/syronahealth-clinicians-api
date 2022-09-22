@@ -32,7 +32,9 @@ import UserInterest from './UserInterest';
     Employee.belongsTo(User, { foreignKey: 'user' });
     Employee.belongsTo(Company, { foreignKey: 'corporate' });
   } catch (error) {
-    console.log(error);
+    throw new Error(
+      'Error while build an associations between database models',
+    );
   }
 })();
 export {

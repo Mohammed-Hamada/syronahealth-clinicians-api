@@ -31,14 +31,10 @@ const updateCompany = async (
 
     const arrayOfValidEmails = await splitEmails(email);
 
-    console.log('businessEmployees: ', businessEmployees);
-    console.log('arrayOfValidEmails: ', arrayOfValidEmails);
-
     const emailsToUpdate = await differenceBetweenTwoArrays(
       businessEmployees.map((e) => e.email) as [],
       arrayOfValidEmails as [],
     );
-    console.log('emailsToUpdate: ', emailsToUpdate);
 
     const validCompany = await validateCompany({
       type: 'update',
