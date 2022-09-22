@@ -9,6 +9,7 @@ import {
   jwtCheck,
   checkEmailExistence,
   auth0ManagementAPI,
+  checkAdmin,
 } from './middlewares';
 import router from './routes';
 import { getUserBySub } from './services';
@@ -30,7 +31,7 @@ app.use([
   checkEmailExistence,
 ]);
 
-app.use('/api/v1', router);
+app.use('/api/v1', checkAdmin, router);
 
 app.use([notFoundHandler, errorsHandler]);
 

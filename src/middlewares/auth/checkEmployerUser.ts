@@ -1,24 +1,24 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { CustomError } from '../../helpers';
-import { getUserByEmail } from '../../services';
 
-const checkEmailExistence = async (
+const checkEmployerUser = async (
   _request: Request,
   response: Response,
   next: NextFunction,
 ): Promise<void> => {
   try {
-    const { userEmail } = response.locals;
-    const user = await getUserByEmail(userEmail);
-
-    if (!user) {
+    const { user } = response.locals;
+    if (user.isStaff) {
+      next();
+      return;
+    }
+    if (!user.isBusiness) {
       throw new CustomError(
-        "Your email doesn't exists in our database",
-        StatusCodes.BAD_REQUEST,
+        "You don't have enough permissions",
+        StatusCodes.UNAUTHORIZED,
       );
     } else {
-      response.locals.user = user;
       next();
     }
   } catch (error) {
@@ -26,4 +26,4 @@ const checkEmailExistence = async (
   }
 };
 
-export default checkEmailExistence;
+export default checkEmployerUser;

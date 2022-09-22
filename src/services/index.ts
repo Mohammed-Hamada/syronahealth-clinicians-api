@@ -17,6 +17,7 @@ import updateUsers from './updateUsers';
 import getBusinessEmployeesForCompany from './getBusinessEmployeesForCompany';
 import getUserByEmail from './getUserByEmail';
 import getUserBySub from './auth0ManagementAPI';
+import updateUserByEmail from './updateUserByEmail';
 
 export {
   getAllCompanies,
@@ -38,4 +39,5 @@ export {
   getBusinessEmployeesForCompany,
   getUserByEmail,
   getUserBySub,
+  updateUserByEmail,
 };

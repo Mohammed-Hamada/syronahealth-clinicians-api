@@ -1,12 +1,9 @@
 import axios from 'axios';
 import { NextFunction, Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import { authVars } from '../../config';
-
-// interface IGetAuthRequest extends Request {
-//   auth: {
-//     sub: string;
-//   };
-// }
+import { CustomError } from '../../helpers';
+import { updateUserByEmail } from '..';
 
 const getUserBySub = async (
   request: Request | any,
@@ -19,9 +16,9 @@ const getUserBySub = async (
   } = response.locals;
   try {
     const {
-      data: { email },
+      data: { email, email_verified: isVerified },
     } = await axios.get(
-      `https://${authVars.AUTH0_DOMAIN}/api/v2/users/${sub}?fields=email`,
+      `https://${authVars.AUTH0_DOMAIN}/api/v2/users/${sub}?fields=email%2Cemail_verified`,
       {
         headers: {
           Authorization: `Bearer ${auth0ManagementApiToken}`,
@@ -30,9 +27,15 @@ const getUserBySub = async (
     );
     if (!email) {
       throw new Error('Server Error');
-    } else {
+    } else if (isVerified) {
+      await updateUserByEmail(email);
       response.locals.userEmail = email;
       next();
+    } else {
+      throw new CustomError(
+        'Your email is not verified',
+        StatusCodes.BAD_REQUEST,
+      );
     }
   } catch (error) {
     next(error);
