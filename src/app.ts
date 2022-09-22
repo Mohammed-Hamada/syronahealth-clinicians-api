@@ -3,8 +3,16 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import { notFoundHandler, errorsHandler, jwtCheck } from './middlewares';
+import {
+  notFoundHandler,
+  errorsHandler,
+  jwtCheck,
+  checkEmailExistence,
+  auth0ManagementAPI,
+  checkAdmin,
+} from './middlewares';
 import router from './routes';
+import { getUserBySub } from './services';
 
 const app: Express = express();
 
@@ -18,9 +26,12 @@ app.use([
     skip: () => process.env.NODE_ENV === 'production',
   }),
   jwtCheck,
+  auth0ManagementAPI,
+  getUserBySub,
+  checkEmailExistence,
 ]);
 
-app.use('/api/v1', router);
+app.use('/api/v1', checkAdmin, router);
 
 app.use([notFoundHandler, errorsHandler]);
 

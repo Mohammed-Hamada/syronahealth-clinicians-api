@@ -1,4 +1,10 @@
-import { jwtCheck, superAdminCheck, employerUserCheck } from './auth';
+import {
+  jwtCheck,
+  checkEmailExistence,
+  auth0ManagementAPI,
+  checkEmployerUser,
+  checkAdmin,
+} from './auth';
 import { notFoundHandler, errorsHandler } from './error';
 import { uploadToDisk, uploadToS3 } from './upload';
 
@@ -8,6 +14,8 @@ export {
   uploadToDisk,
   uploadToS3,
   jwtCheck,
-  superAdminCheck,
-  employerUserCheck,
+  auth0ManagementAPI,
+  checkEmailExistence,
+  checkEmployerUser,
+  checkAdmin,
 };
