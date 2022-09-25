@@ -4,13 +4,13 @@ import { CustomError } from '../../helpers';
 import { getUserByEmail } from '../../services';
 
 const checkEmailExistence = async (
-  _request: Request,
+  request: Request | any,
   response: Response,
   next: NextFunction,
 ): Promise<void> => {
   try {
-    const { userEmail } = response.locals;
-    const user = await getUserByEmail(userEmail);
+    const { email } = request.auth;
+    const user = await getUserByEmail(email);
 
     if (!user) {
       throw new CustomError(

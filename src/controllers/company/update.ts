@@ -35,6 +35,7 @@ const updateCompany = async (
       businessEmployees.map((e) => e.email) as [],
       arrayOfValidEmails as [],
     );
+    console.log('emailsToUpdate: ', emailsToUpdate);
 
     const validCompany = await validateCompany({
       type: 'update',
