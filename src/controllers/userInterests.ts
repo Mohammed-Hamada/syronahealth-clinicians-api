@@ -1,22 +1,32 @@
 import { NextFunction, Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 import { SuccessMessages } from '../enums';
+import { CustomError } from '../helpers';
+import { validateParameter } from '../helpers/validation';
 import { ResponseShape } from '../interfaces';
 import { getUsersInterestsForCompany } from '../services';
 
 const sendUsersInterestsForCompany = async (
-  req: Request,
-  res: Response,
+  request: Request,
+  response: Response,
   next: NextFunction,
 ): Promise<Response<ResponseShape> | unknown> => {
   try {
-    const { id } = req.params;
+    const { id } = await validateParameter(
+      request.params as { id: number | string },
+    );
     const usersInterests = await getUsersInterestsForCompany(+id);
-    return res.json({
+    return response.json({
       message: SuccessMessages.SUCCESS,
       data: usersInterests,
     });
   } catch (error) {
+    if (error instanceof Error) {
+      if (error.name === 'ValidationError') {
+        return next(new CustomError(error.message, StatusCodes.BAD_REQUEST));
+      }
+    }
     return next(error);
   }
 };

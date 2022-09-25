@@ -1,15 +1,15 @@
 [
   {
-    "username": "fharwood0",
-    "email": "fharwood0@163.com",
+    "username": "Mohammed",
+    "email": "mohammed3rbio@gmail.com",
     "firstName": "Fairlie",
     "lastName": "Harwood",
     "gender": "",
     "coins": 221,
-    "isActive": false,
+    "isActive": true,
     "isStaff": true,
-    "isDeleted": true,
-    "isBusiness": true
+    "isDeleted": false,
+    "isBusiness": false
   },
   {
     "username": "siacobacci1",
