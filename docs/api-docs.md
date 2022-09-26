@@ -16,7 +16,7 @@
 `staff olny` **Upload a csv file include list of users to be added to the company** [/api/v1/companies/{id}/users](#POST-apiv1companiesidusers)<br/>
 
 ## PATCH (uncompleted)
-`staff olny` **Update company data (Employer User)** [/api/v1/companies/1](#PATCH-apiv1companiesid)<br/>
+`staff olny` **Update company data (Employer User)** [/api/v1/companies/{id}](#PATCH-apiv1companiesid)<br/>
 
 
 ---
