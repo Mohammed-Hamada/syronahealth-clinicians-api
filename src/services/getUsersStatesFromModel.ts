@@ -1,11 +1,22 @@
-import { Model, ModelStatic } from 'sequelize';
+import moment from 'moment';
+import { Model, ModelStatic, Op } from 'sequelize';
 import { Company, User } from '../database/models';
 import { CompanyStatusShape } from '../interfaces';
 
 const getUsersStatesFromModel = async (
   companyId: number,
   from: ModelStatic<Model>,
+  options?: {
+    days?: number;
+  },
 ): Promise<CompanyStatusShape> => {
+  const where = options?.days
+    ? {
+      timestamp: {
+        [Op.gte]: moment().subtract(options.days, 'days').toDate(),
+      },
+    }
+    : undefined;
   const companyData = await Company.findByPk(companyId, {
     attributes: ['id'],
     include: [
@@ -16,6 +27,7 @@ const getUsersStatesFromModel = async (
         include: [
           {
             model: from,
+            where: where || {},
           },
         ],
       },

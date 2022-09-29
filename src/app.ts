@@ -29,7 +29,7 @@ app.use([
   checkEmailExistence,
 ]);
 
-app.use('/api/v1', checkAdmin, router);
+app.use('/api/v1', router);
 
 app.use([notFoundHandler, errorsHandler]);
 

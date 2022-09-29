@@ -15,17 +15,10 @@ import {
   uploadToDisk,
   uploadToS3,
   checkEmployerUser,
+  checkAdmin,
 } from '../middlewares';
 
 const companyRouter = Router();
-
-companyRouter.route('/').get(sendAllCompanies).post(createCompany);
-companyRouter.patch('/:id', updateCompany);
-companyRouter.post(
-  '/:id/users',
-  serverVars.NODE_ENV === 'production' ? uploadToS3 : uploadToDisk,
-  createUsers,
-);
 companyRouter.use(checkEmployerUser);
 companyRouter
   .get('/:id/users-engagements', sendUsersEngagementsForCompany)
@@ -33,5 +26,14 @@ companyRouter
   .get('/:id/users-health-conditions', sendUsersHealthConditionsForCompany)
   .get('/:id/employees-gender', sendEmployeesGenderForCompany)
   .get('/:id', sendCompanyById);
+
+companyRouter.use(checkAdmin);
+companyRouter.route('/').get(sendAllCompanies).post(createCompany);
+companyRouter.patch('/:id', updateCompany);
+companyRouter.post(
+  '/:id/users',
+  serverVars.NODE_ENV === 'production' ? uploadToS3 : uploadToDisk,
+  createUsers,
+);
 
 export default companyRouter;

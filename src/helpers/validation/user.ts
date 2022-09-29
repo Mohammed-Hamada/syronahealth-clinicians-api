@@ -1,10 +1,6 @@
 import joi from 'joi';
 import { UserShape } from '../../interfaces';
 
-/**
- * @param {UserShape} object This is user object to validate
- * @returns {Promise<object>} Promise object represents the valid object
- */
 const validateUser = (object: UserShape): Promise<object> => {
   const userSchema: joi.ObjectSchema<string | boolean | number | Date> = joi
     .object()
