@@ -4,8 +4,14 @@ import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersInterestsForCompany = async (
   companyId: number,
+  options?: {
+    days?: number;
+  },
 ): Promise<object | string> => {
-  const companyData = await getUsersStatesFromModel(companyId, UserInterest);
+  const companyData = await getUsersStatesFromModel(companyId, UserInterest, {
+    days: options?.days,
+  });
+
   if (companyData.companyEmployeesCount === undefined) {
     throw new CustomError(`There is no company with id ${companyId}`, 400);
   }

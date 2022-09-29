@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 
 import { SuccessMessages } from '../enums';
 import { CustomError } from '../helpers';
-import { validateParameter } from '../helpers/validation';
+import { validateDaysQueryParams, validateParameter } from '../helpers/validation';
 import { ResponseShape } from '../interfaces';
 import { getUsersInterestsForCompany } from '../services';
 
@@ -16,7 +16,11 @@ const sendUsersInterestsForCompany = async (
     const { id } = await validateParameter(
       request.params as { id: number | string },
     );
-    const usersInterests = await getUsersInterestsForCompany(+id);
+    const { days } = await validateDaysQueryParams(request.query as any);
+
+    const usersInterests = await getUsersInterestsForCompany(+id, {
+      days,
+    });
     return response.json({
       message: SuccessMessages.SUCCESS,
       data: usersInterests,

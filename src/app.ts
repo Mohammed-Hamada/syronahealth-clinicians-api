@@ -6,10 +6,9 @@ import cookieParser from 'cookie-parser';
 import {
   notFoundHandler,
   errorsHandler,
-  jwtCheck,
-  checkEmailExistence,
+  // jwtCheck,
+  // checkEmailExistence,
   // auth0ManagementAPI,
-  checkAdmin,
 } from './middlewares';
 import router from './routes';
 
@@ -24,9 +23,9 @@ app.use([
   morgan('tiny', {
     skip: () => process.env.NODE_ENV === 'production',
   }),
-  jwtCheck,
-  // auth0ManagementAPI,
-  checkEmailExistence,
+  // jwtCheck,
+  // // auth0ManagementAPI,
+  // checkEmailExistence,
 ]);
 
 app.use('/api/v1', router);
