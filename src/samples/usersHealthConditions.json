@@ -1,43 +1,53 @@
 [
   {
     "user": 2,
-    "healthConditions": ["Leukemia"]
+    "healthConditions": ["Leukemia"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 3,
-    "healthConditions": ["Infertility"]
+    "healthConditions": ["Infertility"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 5,
-    "healthConditions": ["Hair loss", "Heart Disease"]
+    "healthConditions": ["Hair loss", "Heart Disease"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 7,
-    "healthConditions": ["Alzheimer's disease"]
+    "healthConditions": ["Alzheimer's disease"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 9,
-    "healthConditions": ["Chronic obstructive pulmonary disease (COPD)"]
+    "healthConditions": ["Chronic obstructive pulmonary disease (COPD)"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 10,
-    "healthConditions": ["Endo"]
+    "healthConditions": ["Endo"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 6,
-    "healthConditions": ["High blood pressure", "High cholesterol"]
+    "healthConditions": ["High blood pressure", "High cholesterol"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 8,
-    "healthConditions": ["Alzheimer's disease"]
+    "healthConditions": ["Alzheimer's disease"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 4,
-    "healthConditions": ["Infertility", "High cholesterol"]
+    "healthConditions": ["Infertility", "High cholesterol"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 1,
-    "healthConditions": ["Stress", "Hair loss", "Depression"]
+    "healthConditions": ["Stress", "Hair loss", "Depression"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 121,

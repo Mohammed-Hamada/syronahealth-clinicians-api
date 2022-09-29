@@ -4,10 +4,16 @@ import getUsersStatesFromModel from './getUsersStatesFromModel';
 
 const getUsersHealthConditionsForCompany = async (
   companyId: number,
+  options?: {
+    days?: number;
+  },
 ): Promise<object | string> => {
   const companyData = await getUsersStatesFromModel(
     companyId,
     UserHealthCondition,
+    {
+      days: options?.days,
+    },
   );
 
   if (companyData.companyEmployeesCount === undefined) {

@@ -8,7 +8,8 @@
       "Wellbeing",
       "Urological Health",
       "Testicular Health"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 9,
@@ -25,7 +26,8 @@
       "Pregnancy",
       "Sexual Health",
       "Urological Health"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 6,
@@ -39,7 +41,8 @@
       "Endo",
       "Sexual Health",
       "Urological Health"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 2,
@@ -55,7 +58,8 @@
       "Pregnancy",
       "Uterine Fibroids",
       "Menstrual Health"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 5,
@@ -69,7 +73,8 @@
       "Mental Health",
       "Sexual Health",
       "Testicular Health"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 8,
@@ -82,19 +87,23 @@
       "Cancer",
       "Hair & Skin",
       "Pregnancy"
-    ]
+    ],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 7,
-    "interests": ["Testicular Health"]
+    "interests": ["Testicular Health"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 4,
-    "interests": ["Mental Health", "Diet & Nutrition"]
+    "interests": ["Mental Health", "Diet & Nutrition"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 1,
-    "interests": ["Pregnancy", "Sexual Health"]
+    "interests": ["Pregnancy", "Sexual Health"],
+    "timestamp": "August 28, 2022"
   },
   {
     "user": 3,

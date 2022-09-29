@@ -1,10 +1,6 @@
 import joi from 'joi';
 import { CompanyShape } from '../../interfaces';
 
-/**
- * @param {CompanyShape} object This is company object to validate
- * @returns {Promise<object>} Promise object represents the valid object
- */
 const validateCompany = (object: Partial<CompanyShape>): Promise<Partial<CompanyShape>> => {
   const companySchema: joi.ObjectSchema<string | boolean | number | Date> = joi
     .object()

@@ -1,9 +1,5 @@
 import joi from 'joi';
 
-/**
- * @param object This is emails string separated by comma to validate
- * @returns {Promise<object>} Promise object represents the valid object
- */
 const validateEmails = (object: {
   emails: string;
 }): Promise<{ emails: string }> => {
