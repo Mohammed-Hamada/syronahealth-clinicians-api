@@ -22,7 +22,7 @@
 ---
 This API have two roles, Staff user and Business user, and each of them have some permissions to access this API
 
-| **Role** | **Slug** | **Description** |
+| **Role** | **Flag** | **Description** |
 | :--- | :--- | :--- |
 | Staff | `isStaff` | An administrative user. Users with this role can manage system-wide settings as well as he can add Employers and employees and access all data for these users. |
 | Business | `isBusiness` |  A non-administrative user role. Users with this role can access data for just one company. |
@@ -295,6 +295,12 @@ Get users interests for a company
 | :--- | :--- | :--- | :--- |
 | id | required | number | **ID** for the comapny to retrive |
 
+### Query Parameters:
+
+| **Name** | **Required** | **Format** | **Description** |
+| :--- | :--- | :--- | :--- |
+| days | not required | number | - number of days to get data from. <br/>- It could be **30 or 60 or 90.**<br/>- Remove it to get all data. |
+
 **id = 1**
 
 ### Response:
@@ -379,9 +385,11 @@ Get users health conditions for a company
 | :--- | :--- | :--- | :--- |
 | id | required | number | **ID** for the comapny to retrive |
 
-**id = 1**
+### Query Parameters:
 
-### Response:
+| **Name** | **Required** | **Format** | **Description** |
+| :--- | :--- | :--- | :--- |
+| days | not required | number | - number of days to get data from. <br/>- It could be **30 or 60 or 90.**<br/>- Remove it to get all data. |
 ```json
 // There is no company with id 1
 // 400 BAD REQUEST
@@ -500,6 +508,12 @@ Get users gender count for a company
 | **Name** | **Required** | **Format** | **Description** |
 | :--- | :--- | :--- | :--- |
 | id | required | number | **ID** for the comapny to retrive |
+
+### Query Parameters:
+
+| **Name** | **Required** | **Format** | **Description** |
+| :--- | :--- | :--- | :--- |
+| days | not required | number | - number of days to get data from. <br/>- It could be **30 or 60 or 90.**<br/>- Remove it to get all data. |
 
 **id = 1**
 
