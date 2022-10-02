@@ -1,17 +1,5 @@
 [
   {
-    "username": "Mohammed",
-    "email": "mohammed3rbio@gmail.com",
-    "firstName": "Fairlie",
-    "lastName": "Harwood",
-    "gender": "",
-    "coins": 221,
-    "isActive": true,
-    "isStaff": true,
-    "isDeleted": false,
-    "isBusiness": false
-  },
-  {
     "username": "siacobacci1",
     "email": "siacobacci1@exblog.jp",
     "firstName": "Sophia",
@@ -2410,5 +2398,41 @@
     "isStaff": false,
     "isDeleted": false,
     "isBusiness": false
+  },
+  {
+    "username": "Mohammed",
+    "email": "mohammed3rbio@gmail.com",
+    "firstName": "Fairlie",
+    "lastName": "Harwood",
+    "gender": "",
+    "coins": 221,
+    "isActive": true,
+    "isStaff": true,
+    "isDeleted": false,
+    "isBusiness": false
+  },
+  {
+    "username": "Nada",
+    "email": "nada.b.abu.zaid@gmail.com",
+    "firstName": "Nada",
+    "lastName": "Abu Zaid",
+    "gender": "Female",
+    "coins": 221,
+    "isActive": true,
+    "isStaff": true,
+    "isDeleted": false,
+    "isBusiness": false
+  },
+  {
+    "username": "Bassam",
+    "email": "hamadabassam1996@gmail.com",
+    "firstName": "Bassam",
+    "lastName": "Abu Zaid",
+    "gender": "Male",
+    "coins": 221,
+    "isActive": true,
+    "isStaff": false,
+    "isDeleted": false,
+    "isBusiness": true
   }
 ]
