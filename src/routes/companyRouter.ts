@@ -14,12 +14,12 @@ import {
 import {
   uploadToDisk,
   uploadToS3,
-  // checkEmployerUser,
-  // checkAdmin,
+  checkEmployerUser,
+  checkAdmin,
 } from '../middlewares';
 
 const companyRouter = Router();
-// companyRouter.use(checkEmployerUser);
+companyRouter.use(checkEmployerUser);
 companyRouter
   .get('/:id/users-engagements', sendUsersEngagementsForCompany)
   .get('/:id/users-interests', sendUsersInterestsForCompany)
@@ -27,7 +27,7 @@ companyRouter
   .get('/:id/employees-gender', sendEmployeesGenderForCompany)
   .get('/:id', sendCompanyById);
 
-// companyRouter.use(checkAdmin);
+companyRouter.use(checkAdmin);
 companyRouter.route('/').get(sendAllCompanies).post(createCompany);
 companyRouter.patch('/:id', updateCompany);
 companyRouter.post(
