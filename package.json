@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/Mohammed-Hamada/syronahealth-clinicians-api#readme",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.160.0",
+    "@aws-sdk/client-s3": "^3.350.0",
     "@types/express-serve-static-core": "^4.17.30",
     "@types/multer": "^1.4.7",
     "@types/multer-s3": "^3.0.0",
